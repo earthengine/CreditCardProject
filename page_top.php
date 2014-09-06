@@ -11,8 +11,8 @@ date_default_timezone_set('Australia/Melbourne');
 <link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
 <title>Credit Card Project</title>
-<script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </head>
 
 <body>

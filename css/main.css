@@ -755,8 +755,6 @@ img{
 	margin-bottom:0;
 }
 .box-row-card{
-	width:144px;
-	height:116px;
-	background-image:url(../image/cards/ANZ_Rewards_Black.jpg);
+        display:inline-block;
 }
 /* - End of Box Style - */
