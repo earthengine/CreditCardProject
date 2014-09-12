@@ -1,0 +1,616 @@
+.content-box h3{
+	margin-top:50px;
+	font-size:18px;
+}
+.content-box-small{
+	text-align:left;
+	width:50%;
+	margin-top:20px;
+}
+.content-box-small p{
+	font-size:16px;
+}
+.content-box-small a{
+	color:#000;
+	font-family: 'Sorts Mill Goudy', 'serif';
+	text-decoration:underline;
+}
+.content-box-small a:hover{
+	color:#FC6;
+	text-decoration:underline;
+}
+.content-line{
+	border-bottom:1px dotted #CCCCCC;
+	padding:10px;
+	text-align:left;
+}
+.content-line a{
+	color:#000;
+	text-decoration:none;
+}
+.content-line a:hover{
+	color:#F90;
+	text-decoration:underline;
+	text-shadow: 0 0 1px #999;
+}
+.content-paging{
+	padding:10px;
+	text-align:center;
+	font-size:12px;
+}
+.content-paging a{
+	color:inherit;
+	text-decoration:none;
+}
+.content-paging a:hover{
+	color:#CCC;
+	text-decoration:underline;
+}
+.news-title{
+	font-family: 'Sorts Mill Goudy', 'serif';
+	font-size:18px;
+	text-align:center;
+	padding:10px;
+}
+.news-time{
+	font-family:"Courier New", Courier, monospace;
+	font-size:12px;
+	color:#999;
+	width:80%;
+	text-align:right;
+	padding:10px;
+}
+.news-content{
+	width:80%;
+	text-align:left;
+	line-height:1.5;
+	padding:10px;
+}
+.news-back{
+	width:80%;
+	margin-top:20px;
+	text-align:left;
+}
+.news-back a{
+	color:#000;
+	font-family: 'Sorts Mill Goudy', 'serif';
+	text-decoration:none;
+}
+.news-back a:hover{
+	color:#FC6;
+	text-decoration:underline;
+}
+
+
+/* - Form Style - */
+.form-wrapper{
+	width:500px;
+	border:1px solid #DDD;
+	-moz-box-shadow:1px 1px 7px #ccc;
+	-webkit-box-shadow:1px 1px 7px #ccc;
+	box-shadow:1px 1px 7px #ccc;
+}
+.form-label{
+	font-weight:bold;
+	font-size:16px;
+}
+.form-banner{
+	background:#444;
+	padding:20px;
+	font-family: 'Sorts Mill Goudy', 'serif';
+	font-size:36px;
+	color:#FFF;
+	text-align:left;
+	text-shadow: 1px 1px 1px #000;
+}
+.form-box{
+	padding:20px 40px;
+	width:420px;
+}
+.form-box .hint{
+	color:#F33;
+	font-size:13px;
+}
+.form-textbox{
+	border:1px solid #CCC;
+	padding:4px;
+	font-size:16px;
+	font-family: 'Pontano Sans', 'sans-serif';
+	-moz-box-shadow:1px 1px 7px #ccc;
+	-webkit-box-shadow:1px 1px 7px #ccc;
+	box-shadow:1px 1px 7px #ccc;
+}
+.form-btn{
+	background: #ffffff;
+	background-image: -webkit-linear-gradient(top, #ffffff, #d6d6d6);
+	background-image: -moz-linear-gradient(top, #ffffff, #d6d6d6);
+	background-image: -ms-linear-gradient(top, #ffffff, #d6d6d6);
+	background-image: -o-linear-gradient(top, #ffffff, #d6d6d6);
+	background-image: linear-gradient(to bottom, #ffffff, #d6d6d6);
+	-webkit-border-radius: 4;
+	-moz-border-radius: 4;
+	border-radius: 4px;
+	text-shadow: 1px 1px 3px #666666;
+	-webkit-box-shadow: 0px 1px 3px #000000;
+	-moz-box-shadow: 0px 1px 3px #000000;
+	box-shadow: 0px 1px 3px #000000;
+	font-family: Georgia;
+	color: #444;
+	font-size: 14px;
+	padding: 10px 40px 10px 40px;
+	border: solid #b0b0b0 1px;
+	text-decoration: none;
+}
+.form-btn:hover{
+	color:#FFF;
+}
+.form-bottom{
+	background:#444;
+	padding:20px;
+	font-size:12px;
+	color:#FFF;
+	text-align:right;
+}
+.form-bottom a{
+	color:#FC6;
+	font-family: 'Sorts Mill Goudy', 'serif';
+	text-decoration:none;
+	text-shadow: 1px 1px 1px #000;
+}
+.form-bottom a:hover{
+	text-decoration:underline;
+}
+/* - Form Style - */
+.yellow{
+	color:#FC6;
+}
+.red{
+	color:#F33;
+}
+.green{
+	color:#093;
+}
+.blue{
+	color:#09C;
+}
+.black{
+	color:#000;
+}
+.tshadow{
+	text-shadow: 1px 1px 1px #999;
+}
+.t32{
+	font-size:32px;
+}
+.beta{
+	font:"Courier New", Courier, monospace;
+	color:#FFF;
+	background:#F00;
+	font-size:14px;
+	text-shadow:none;
+}
+.notificationbox-red{
+	margin-top:40px;
+	margin-left:auto;
+	margin-right:auto;
+	color:#F33;
+	width:500px;
+	min-height:400px;
+	padding-top:40px;
+	text-align:center;
+	border:1px solid #F33;
+	background:#F7E1E5;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	border-radius:8px;
+	-webkit-box-shadow:1px 1px 5px 0px rgba(50, 50, 50, 1);
+	-moz-box-shadow:1px 1px 5px 0px rgba(50, 50, 50, 1);
+	box-shadow:1px 1px 5px 0px rgba(50, 50, 50, 1);
+}
+.notificationbox-red p{
+	font-size:96px;
+}
+.notificationbox-red a{
+	color:#F33;
+	text-decoration:underline;
+}
+.notificationbox-green{
+	margin-top:40px;
+	margin-left:auto;
+	margin-right:auto;
+	color:#396;
+	width:500px;
+	min-height:400px;
+	padding-top:40px;
+	text-align:center;
+	border:1px solid #396;
+	background:#CCF2DB;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	border-radius:8px;
+	-webkit-box-shadow:1px 1px 5px 0px rgba(50, 50, 50, 1);
+	-moz-box-shadow:1px 1px 5px 0px rgba(50, 50, 50, 1);
+	box-shadow:1px 1px 5px 0px rgba(50, 50, 50, 1);
+}
+.notificationbox-green p{
+	font-size:96px;
+}
+.notificationbox-green a{
+	color:#396;
+	text-decoration:underline;
+}
+
+.congratulation{
+	font-family: 'Sorts Mill Goudy', 'serif';
+	font-size:36px;
+	text-shadow: 1px 1px 1px #999;
+	color:#666;
+}
+
+/* - Control Panel Style - */
+.cp-welcome{
+	font-family: 'Sorts Mill Goudy', 'serif';
+	font-size:24px;
+	text-align:left;
+	border-bottom:1px solid #CCC;
+	margin-bottom:10px;
+}
+.cp-leftcol{
+	/*border:1px solid #09C;*/
+	padding:10px;
+	text-align:left;
+	line-height:2;
+	font-size:16px;
+}
+.cp-leftcol strong{
+	font-family: 'Sorts Mill Goudy', 'serif';
+}
+.cp-leftcol a{
+	color:inherit;
+	text-decoration:none;
+}
+.cp-leftcol a:hover{
+	text-decoration:underline;
+}
+.cp-rightcol{
+	padding:10px;
+	width:90%;
+	float:left;
+	margin-bottom:10px;
+	border:1px solid #CCC;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	-moz-box-shadow:1px 1px 7px #ccc;
+	-webkit-box-shadow:1px 1px 7px #ccc;
+	box-shadow:1px 1px 7px #ccc;
+}
+.cp-rightcol-title{
+	font-family: 'Sorts Mill Goudy', 'serif';
+	font-size:16px;
+	text-align:left;
+	border-bottom:1px solid #ccc;
+	padding:10px 0;
+}
+.cp-rightcol-title a{
+	color:#F33;
+	font-size:13px;
+	text-decoration:none;
+}
+.cp-rightcol-title a:hover{
+	text-decoration:underline;
+}
+.cp-rightcol-info{
+	padding:20px 0;
+}
+/* - End of Control Panel Style - */
+
+/* - Forum Style - */
+.forum-nav{
+	width:98%;
+	float:left;
+	text-align:left;
+	margin-bottom:10px;
+}
+.forum-nav a{
+	font-weight:bold;
+	text-decoration:none;
+	color:inherit;
+}
+.forum-nav a:hover{
+	text-decoration:underline;
+	color:#999;
+}
+.forum-actionbar{
+	width:98%;
+	text-align:right;
+	margin-bottom:10px;
+	float:left;
+	display:table;
+}
+.forum-actionbar a{
+	color:inherit;
+	text-decoration:none;
+}
+.forum-actionbar-btn{
+	float:left;
+	margin-right:10px;
+	font-family: 'Sorts Mill Goudy', 'serif';
+	color:#FFF;
+	font-size:14px;
+	min-width:100px;
+	text-align:center;
+	padding:5px 10px;
+	border:1px solid #CCC;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	-moz-box-shadow:1px 1px 7px #ccc;
+	-webkit-box-shadow:1px 1px 7px #ccc;
+	box-shadow:1px 1px 7px #ccc;
+}
+.forum-actionbar-btn:hover{
+	opacity: 0.9;
+}
+.forum-action-btn-green{
+	border-color:#060;
+	background:#090;
+}
+.forum-action-btn-blue{
+	border-color:#3B5998;
+	background:#09C;
+}
+.forum-sectionbox{
+	padding:10px;
+	width:98%;
+	float:left;
+	margin-bottom:10px;
+	border:1px solid #CCC;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	-moz-box-shadow:1px 1px 7px #ccc;
+	-webkit-box-shadow:1px 1px 7px #ccc;
+	box-shadow:1px 1px 7px #ccc;
+}
+.forum-sectionbox-line{
+	width:98%;
+	display:table;
+	border-bottom:1px dotted #CCC;
+	padding:10px 0;
+	font-size:14px;
+}
+.forum-sectionbox-line:last-child{
+	border:none;
+}
+.forum-sectionbox-line a{
+	text-decoration:none;
+	color:inherit;
+}
+.forum-sectionbox-line a:hover{
+	text-decoration:underline;
+}
+.forum-sectionbox-line-1{
+	width:80%;
+	display:table-column;
+	text-align:left;
+	float:left;
+}
+.forum-sectionbox-line-2{
+	width:8%;
+	display:table-column;
+	text-align:center;
+	float:left;
+}
+.forum-sectionbox-line-3{
+	width:8%;
+	display:table-column;
+	text-align:center;
+	float:left;
+}
+.forum-ms{
+	padding:10px;
+	width:98%;
+	float:left;
+	margin-bottom:10px;
+	border:1px solid #CCC;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	-moz-box-shadow:1px 1px 7px #ccc;
+	-webkit-box-shadow:1px 1px 7px #ccc;
+	box-shadow:1px 1px 7px #ccc;
+}
+.forum-ms-title{
+	width:98%;
+	text-align:left;
+	border-bottom:1px solid #CCC;
+	padding-bottom:2px;
+	font-family: 'Sorts Mill Goudy', 'serif';
+	font-size:16px;
+	font-weight:bold;
+}
+.forum-ms-title a{
+	color:#F33;
+	font-size:14px;
+	text-decoration:none;
+}
+.forum-ms-title a:hover{
+	text-decoration:underline;
+}
+.forum-ss{
+	width:98%;
+	text-align:left;
+	border-bottom:1px dotted #CCC;
+	padding:4px 0;
+	margin:2px 0;
+	display:table;
+	font-size:13px;
+}
+.forum-ss:last-child{
+	border:none;
+	margin-bottom:0;
+}
+.forum-ss-left{
+	float:left;
+	width:88%;
+	text-align:left;
+	display:table-column;
+	color:#666;
+}
+.forum-ss-left a{
+	text-decoration:none;
+	color:#000;
+	font-family: 'Sorts Mill Goudy', 'serif';
+	font-size:14px;
+}
+.forum-ss-left a:hover{
+	text-decoration:underline;
+}
+.forum-ss-right{
+	float:left;
+	width:8%;
+	text-align:center;
+	display:table-column;
+}
+.forum-post-author{
+	width:90%;
+	text-align:center;
+	font-family: 'Sorts Mill Goudy', 'serif';
+	font-size:14px;
+	margin-top:4px;
+}
+.forum-post-author-admin{
+	width:90%;
+	text-align:center;
+	font-family: 'Sorts Mill Goudy', 'serif';
+	font-size:14px;
+	margin-top:2px;
+	color:#F33;
+}
+.forum-post-avatar{
+	width:80px;
+	border:1px solid #999;
+	padding:2px;
+	margin-bottom:4px;
+}
+.forum-post-time{
+	width:95%;
+	text-align:left;
+	font-family:"Courier New", Courier, monospace;
+	color:#999;
+	font-size:12px;
+	border-bottom:1px dotted #CCC;
+	padding:0 0 4px 4px;
+}
+.forum-post-content{
+	width:95%;
+	text-align:left;
+	padding:4px 0 4px 4px;
+	min-height:150px;
+}
+.forum-post-quote{
+	width:95%;
+	text-align:left;
+	font-size:12px;
+	border-top:1px dotted #CCC;
+	padding:4px 0 0 4px;
+}
+.forum-post-quote a{
+	text-decoration:none;
+	color:inherit;
+}
+.forum-post-quote a:hover{
+	text-decoration:underline;
+	color:#09C;
+}
+.forum-post-quotebox{
+	width:60%;
+	border:1px solid #CCC;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	padding:4px;
+	font-size:12px;
+	margin-bottom:10px;
+}
+.forum-post-quotebox-title{
+	width:100%;
+	float:left;
+	text-align:left;
+	border-bottom:1px dotted #CCC;
+	padding-bottom:4px;
+	margin-bottom:4px;
+}
+/* - End of Forum Style - */
+
+/* - Monster Style - */
+.mon-box{
+	width:90%;
+	padding:4px;
+	margin:4px;
+	text-align:left;
+	display:table;
+}
+.mon-box span{
+	font-family: 'Sorts Mill Goudy', 'serif';
+	font-size:16px;
+}
+.mon-box img{
+	border:1px solid #999;
+	padding:2px;
+	-moz-box-shadow:1px 1px 7px #ccc;
+	-webkit-box-shadow:1px 1px 7px #ccc;
+	box-shadow:1px 1px 7px #ccc;
+}
+.mon-box a{
+	color:inherit;
+	text-decoration:none;
+}
+.mon-box a:hover{
+	color:#F33;
+	text-decoration:underline;
+}
+.mon-box-left{
+	display:table-column;
+	width:100px;
+	float:left;
+	text-align:center;
+}
+.mon-box-right{
+	display:table-column;
+	width:260px;
+	float:left;
+	text-align:left;
+	margin-left:10px;
+}
+.mon-cfm{
+	width:150px;
+	padding:10px 0;
+	display:table;
+}
+.mon-cfm a{
+	color:inherit;
+	text-decoration:none;
+}
+.mon-chooseforme{
+	font-family: 'Sorts Mill Goudy', 'serif';
+	color:#FFF;
+	font-size:14px;
+	width:150px;
+	text-align:center;
+	padding:5px 0;
+	border:1px solid #CCC;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	-moz-box-shadow:1px 1px 7px #ccc;
+	-webkit-box-shadow:1px 1px 7px #ccc;
+	box-shadow:1px 1px 7px #ccc;
+	border-color:#C00;
+	background:#F33;
+}
+.mon-chooseforme:hover{
+	opacity: 0.9;
+}
+/* - End of Monster Style - */
