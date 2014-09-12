@@ -11,13 +11,39 @@ function deleteCard(event){
 	$(event.target).parent().remove();
 }
 
+function editCard(event){
+    deleteCard(event);
+    $( "#add-card" ).dialog("open");
+}
+
 $(document).ready(function(){
-  $("#addCard").click(function(){
-       app1(function(msg){
-       var v1=$(msg);
-       v1.children("input").click(deleteCard);
-       $("#wallet").append(v1);
-    });
+  $("#add-card").dialog({
+	autoOpen: false,
+	width: 400,
+	buttons: [
+		{
+			text: "Ok",
+			click: function() {
+					app1(function(msg){
+					var v1=$(msg);
+					v1.children(".delete-card").click(deleteCard);
+					v1.children(".edit-card").click(editCard);
+					$("#wallet").append(v1);					
+				});
+				$( this ).dialog( "close" );
+			}
+		},
+		{
+			text: "Cancel",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		}
+	]
   });
-  $("input[value=\"delete\"]").click(deleteCard);
+  
+  $( "#dialog-link" ).click(function( event ) {
+	$( "#add-card" ).dialog( "open" );
+	event.preventDefault();
+  });
 });
