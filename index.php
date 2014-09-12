@@ -12,7 +12,7 @@
         </div>
     </div>
 
-<div id="add-card" title="Dialog Title">
+<div id="add-card" title="Add Card">
 	<table>
 		<tr><td>Bank:<td><td><select><option value="ANZ" selected="yes">ANZ</option></select></td></tr>
 		<tr><td>Card:<td><td><select><option value="ARW Classic" selected="yes">ARW Classic</option></select></td></tr>
