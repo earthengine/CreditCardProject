@@ -17,8 +17,8 @@ function deleteCard(event){
 
 function editCard(event){
     deleteCard(event);
-	$( "#add-card" ).dialog( "option", "title", "Edit Card" );
-	$( "#add-card" ).dialog( "option", "buttons", getButtons(dlgOK, dlgOK));
+    $( "#add-card" ).dialog( "option", "title", "Edit Card" );
+    $( "#add-card" ).dialog( "option", "buttons", getButtons(dlgOK, dlgOK));
     $( "#add-card" ).dialog( "open" );
 }
 
