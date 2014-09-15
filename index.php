@@ -83,15 +83,4 @@
             </div>
         </div>
     </div>
-
-<div id="add-card" title="Add Card">
-	<table>
-		<tr><td>Bank:<td><td><select><option value="ANZ" selected="yes">ANZ</option></select></td></tr>
-		<tr><td>Card:<td><td><select><option value="ARW Classic" selected="yes">ARW Classic</option></select></td></tr>
-		<tr><td>Average spend (monthly):<td><td><input value="4000"></td></tr>
-		<tr><td>Balance paid off:<td><td><select><option value="All" selected="yes">All</option><option value="Min" selected="yes">Mininum</option></select></td></tr>
-		<tr><td>Percentage spend on AMEX:<td><td><input value="25">%</td></tr>
-	</table>	
-</div>
-
 <?php include 'page_footer.php'; ?>
