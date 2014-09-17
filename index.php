@@ -3,57 +3,9 @@
     	<div class="content-banner">My Card</div>
         <div class="content-box">
         	<div class="box-main">
-            	<div class="box-title">What card(s) do you have?</div>
-                <form id="form1" name="form1" method="post" action="">
-                <div class="box-row">
-                <label for="bank">Bank&nbsp;&nbsp;</label>
-                <select name="bank" id="bank" onchange="getCard();">
-                	<option selected>- Please select a bank -</option>
-                </select>&nbsp;&nbsp;
-                <label for="card">Card&nbsp;&nbsp;</label>
-                <select name="card" id="card" onchange="getCardImage();"></select>
-                </div>
-                <div class="box-row">
-                	<div id="cardimage"></div>
-                </div>
-                <div class="box-row">
-                <table width="400" border="0" cellspacing="2" cellpadding="2">
-                  <tbody>
-                    <tr>
-                      <td width="45%" align="left">
-                      <label for="textfield">Average monthly spend&nbsp;&nbsp;</label>
-                      </td>
-                      <td align="left">
-                      <input type="text" name="ams" id="ams" onkeypress="return event.keyCode>=48&&event.keyCode<=57||event.keyCode==46" onpaste="return !clipboardData.getData('text').match(/\D/)" ondragenter="return false" style="ime-mode:Disabled">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left"><label for="bpem">Balance paid each month&nbsp;&nbsp;</label></td>
-                      <td align="left">
-                      <select name="bpem" id="bpem">
-                           <option value="0">All</option>
-                           <option value="1">Min Balance</option>
-                           <option value="2">&lt;50%</option>
-                           <option value="3">&gt;50%</option>
-                       </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left"><label for="pir">Purchase interest rate&nbsp;&nbsp;</label></td>
-                      <td align="left"><input type="text" name="pir" id="pir"></td>
-                    </tr>
-                    <tr>
-                      <td align="left"><label for="af">Annual fees&nbsp;&nbsp;</label></td>
-                      <td align="left"><input type="text" name="af" id="af"></td>
-                    </tr>
-                  </tbody>
-                </table>
-                </div>
-                <div class="box-row"><input type="submit" name="submit" id="submit" class="btn btn-green" value="Add Card" /></div>
-                </form>
-            </div>
-        	<div class="box-main">
-            	<div class="box-title">My current cards</div>
+            	<div class="box-title">My current cards
+	<span><a href="#" id="add-card-link" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-newwin"></span>Add Card</a></span>
+		</div>
                 <div class="box-row">
                     <div class="box-row-card">&nbsp;</div>
                 </div>
@@ -83,4 +35,33 @@
             </div>
         </div>
     </div>
+
+<div id="add-card" title="Add Card">
+	<table>
+		<tr><td><label for="bank">Bank</label></td><td><select name="bank" id="bank" onchange="getCard();">
+                	<option selected>- Please select a bank -</option>
+                </select></td></tr>
+		<tr><td><label for="card">Card</label></td>
+                    <td><select name="card" id="card" onchange="getCardImage();"></select></td></tr>
+		<tr><td colspan="2"><div class="box-row">
+                	<div id="cardimage"></div>
+                </div></td></tr>
+		<tr><td><label for="ams">Average monthly spend&nbsp;&nbsp;</label></td><td><input type="text" name="ams" 
+		id="ams" onkeypress="return event.keyCode>=48&&event.keyCode<=57||event.keyCode==46;" 
+		onpaste="return !clipboardData.getData('text').match(/\D/);" ondragenter="return false;" style="ime-mode:Disabled" value="4000"></td></tr>
+		<tr><td>Balance paid off:</td><td><select name="bpem" id="bpem">
+                           <option value="0">All</option>
+                           <option value="1">Min Balance</option>
+                           <option value="2">&lt;50%</option>
+                           <option value="3">&gt;50%</option>
+                       </select></td></tr>
+		<tr><td><label for="pir">Purchase interest rate</label></td><td><input type="text" name="pir" id="pir" value="19">%</td></tr>
+		<tr><td>Percentage spend on AMEX:</td><td><input value="25">%</td></tr>
+                    <tr>
+                      <td align="left"><label for="af">Annual fees&nbsp;&nbsp;</label></td>
+                      <td align="left"><input type="text" name="af" id="af"></td>
+                    </tr>
+	</table>	
+</div>
+
 <?php include 'page_footer.php'; ?>

@@ -110,6 +110,7 @@ img{
 	font-family: 'Sorts Mill Goudy', 'serif';
 	font-size:16px;
 	font-weight:bold;
+        line-height:35px;
 }
 .box-title a{
 	color:#F33;
@@ -177,6 +178,9 @@ img{
 	box-shadow:1px 1px 7px #ccc;
 	margin-top:30px;
 	line-height:1.5;
+}
+#button-add-card{
+	float:right;
 }
 /* - End of Footer Style - */
 
