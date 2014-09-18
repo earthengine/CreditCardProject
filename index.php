@@ -4,7 +4,7 @@
         <div class="content-box">
         	<div class="box-main">
             	<div class="box-title">My current cards
-	<span><a href="#" id="add-card-link" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-newwin"></span>Add Card</a></span>
+		<span id="button-add-card"><a href="#" id="add-card-link" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-newwin"></span>Add Card</a></span>
 		</div>
                 <div class="box-row">
                     <div class="box-row-card">&nbsp;</div>
