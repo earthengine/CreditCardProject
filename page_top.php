@@ -16,12 +16,12 @@ include 'include/func.php';
 <link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
 <title>Credit Card Project</title>
 <style>
-	#dialog-link {
+	.jq-button {
 		padding: .4em 1em .4em 20px;
 		text-decoration: none;
 		position: relative;
 	}
-	#dialog-link span.ui-icon {
+	.jq-button span.ui-icon {
 		margin: 0 5px 0 0;
 		position: absolute;
 		left: .2em;

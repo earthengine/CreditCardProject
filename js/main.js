@@ -37,8 +37,7 @@ function getCard(){
        });
 }
 
-function getCardImage(){
-       card=$("#card").val();
+function getCardImageById(card){
        $("#cardimage").empty();
        $.ajax({
                url:'get_card_image.php',
@@ -52,12 +51,38 @@ function getCardImage(){
        });
 }
 
-function getNewCard(cont){
-    var req = $.ajax({
-		url: "interface/get_card.php",
-		type: "GET",
-		dataType: "html"});
-    req.done(cont);
+function getCardImage(){
+       getCardImageById($("#card").val());
+}
+
+var nextId = 0;
+
+function getCardElement(card, id){
+  var cardElem = $( "#wallet-card-template" );
+  cardElem = cardElem.children( ".wallet-card" ).clone();
+  cardElem.data(card);
+  cardElem.attr("id", "card" + id);
+  cardElem.children(".wallet-card-image").attr("src",getCardImage(card.card));
+  cardElem.children(".wallet-label").text(card.name);
+  cardElem.children(".delete-card").click(deleteCard);
+  cardElem.children(".edit-card").click(editCard);
+  return cardElem;
+}
+
+function addNewCard(){
+    var card = {
+	bank:$( "#bank" ).val(),
+	id:$( "#card" ).val(),
+	name:$( "#card option:selected" ).text(),
+	ams:$( "#ams" ).val(),
+	bpem:$( "#bpem" ).val(),
+	pir:$( "#pir" ).val(),
+	psa:$( "#psa" ).val()
+    }
+    var l = $("#wallet").length;
+    var elem = getCardElement(card, ++nextId);
+    var e = elem.html();
+    $("#wallet").append(elem);
 }
 
 function getButtons(onOK, onCancel){
@@ -69,19 +94,23 @@ function deleteCard(event){
 }
 
 function editCard(event){
+    var card = $(event.target).parent().data();
     deleteCard(event);
+
+    $( "#bank" ).val(card.bank);
+    $( "#card" ).val(card.id);
+    $( "#ams" ).val(card.ams);
+    $( "#bpem" ).val(card.bpem);
+    $( "#pir" ).val(card.pir);
+    $( "#psa" ).val(card.psa);
+
     $( "#add-card" ).dialog( "option", "title", "Edit Card" );
     $( "#add-card" ).dialog( "option", "buttons", getButtons(dlgOK, dlgOK));
     $( "#add-card" ).dialog( "open" );
 }
 
 function dlgOK(){
-	getNewCard(function(msg){
-		var v1=$(msg);
-		v1.children(".delete-card").click(deleteCard);
-		v1.children(".edit-card").click(editCard);
-		$("#wallet").append(v1);					
-	});
+	addNewCard();
 	dlgClose();
 	$( "#add-card" ).dialog( "option", "title", "Add Card" );
 	$( "#add-card" ).dialog( "option", "buttons", getButtons(dlgOK, dlgClose));

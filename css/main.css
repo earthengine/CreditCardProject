@@ -81,6 +81,9 @@ img{
 	width:100%;
 	margin-top:20px;
 }
+.wallet-label{
+   margin:10px;
+}
 
 /************** Break point ***************/
 
@@ -134,9 +137,10 @@ img{
 	margin-bottom:0;
 }
 .box-row-card{
-	width:144px;
-	height:116px;
-	background-image:url(../image/cards/ANZ_Rewards_Black.jpg);
+	display:inline-block;
+	margin-right:15px;
+	width:288px;
+	height:150px;
 }
 /* - End of Box Style - */
 
