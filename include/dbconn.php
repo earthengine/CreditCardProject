@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost","root","root");
+$conn = mysqli_connect("localhost","root","");
 //$conn = mysqli_connect("118.145.6.21","s221907","xR8!hTv#");
 if( !$conn ){
 	exit("<span style=\"font-family:'Courier New';\">&gt;&gt;&nbsp;database connection error.0.1<br/>&gt;&gt;&nbsp;....0.1<br/>&gt;&gt;&nbsp;please contact administrator.</span>");

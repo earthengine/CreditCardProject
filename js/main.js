@@ -37,36 +37,40 @@ function getCard(){
        });
 }
 
-function getCardImageById(card){
+function getCardImageById(card, cont){
        $("#cardimage").empty();
        $.ajax({
                url:'get_card_image.php',
                data:"card="+card,
                type:'get',
                dataType:'text',
-               success:function(cardimg){
-                       $("#cardimage").empty();
-                       $("#cardimage").append(cardimg);
-               }
+               success:cont
        });
 }
 
 function getCardImage(){
-       getCardImageById($("#card").val());
+    getCardImageById($("#card").val(), function(cardimg){
+        $("#cardimage").empty();
+        $("#cardimage").append(cardimg);
+    });
 }
 
 var nextId = 0;
 
-function getCardElement(card, id){
-  var cardElem = $( "#wallet-card-template" );
-  cardElem = cardElem.children( ".wallet-card" ).clone();
-  cardElem.data(card);
-  cardElem.attr("id", "card" + id);
-  cardElem.children(".wallet-card-image").attr("src",getCardImage(card.card));
-  cardElem.children(".wallet-label").text(card.name);
-  cardElem.children(".delete-card").click(deleteCard);
-  cardElem.children(".edit-card").click(editCard);
-  return cardElem;
+function getCardElement(card, id, cont){
+    getCardImageById(card.id, function(cardimg){
+		var cardElem = $( "#wallet-card-template" );
+		cardElem = cardElem.children( ".wallet-card" ).clone();
+		cardElem.data(card);
+		cardElem.attr("id", "card" + id);
+		var wci = cardElem.children(".wallet-card-image");
+		wci.attr("src","image/cards/" + cardimg);
+		wci.attr("alt",card.name);
+		cardElem.children(".wallet-label").text(card.name);
+		cardElem.children(".delete-card").click(deleteCard);
+		cardElem.children(".edit-card").click(editCard);
+		cont(cardElem);
+	});
 }
 
 function addNewCard(){
@@ -80,9 +84,9 @@ function addNewCard(){
 	psa:$( "#psa" ).val()
     }
     var l = $("#wallet").length;
-    var elem = getCardElement(card, ++nextId);
-    var e = elem.html();
-    $("#wallet").append(elem);
+	getCardElement(card, ++nextId, function(elem){
+        $("#wallet").append(elem);
+	});
 }
 
 function getButtons(onOK, onCancel){
