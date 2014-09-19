@@ -8,31 +8,35 @@ function editCard(i, cont){
 }
 
 function getBank() {
-       $.ajax({
-               url:'get_bank.php',
-               type:'get',
-               dataType:'text',
-               success:function(banks){
-		       $("#bank").empty();
-		       $("#bank").append("<option selected=\"selected\">- Please select a bank -</option>");
-                       $("#bank").append(banks);
-               }
-       });
+    $.ajax({
+        url:'get_bank.php',
+        type:'get',
+        dataType:'text',
+        success:function(banks){
+	        $("#bank").empty();
+		    $("#bank").append("<option selected=\"selected\">- Please select a bank -</option>");
+			$("#bank option:selected").data("");
+            $("#bank").append(banks);
+			$("#bank option").each(getCard);
+			$("#bank").change(function(ev){
+				$("#card").empty();
+				$("#card").append("<option selected=\"selected\">- Please select a card -</option>");
+				var b = $("#bank option:selected").data();
+				$("#card").append($("#bank option:selected").data());
+			});
+        }
+    });
 }
 
-function getCard(){
-       bank=$("#bank").val();
-       $("#card").empty();
-       $("#card").append("<option selected=\"selected\">- Please select a card -</option>");
+function getCard(bankOpt){
        $.ajax({
                url:'get_card.php',
-               data:"bank="+bank,
+               data:"bank="+bankOpt,
                type:'get',
                dataType:'text',
                success:function(cards){
-                       $("#card").empty();
-                       $("#card").append("<option selected=\"selected\">- Please select a card -</option>");
-                       $("#card").append(cards);
+					var b = $("#bank option:eq(" + bankOpt + ")");
+					b.data(cards);
                }
        });
 }
@@ -73,8 +77,8 @@ function getCardElement(card, id, cont){
 	});
 }
 
-function addNewCard(){
-    var card = {
+function addCard(){
+	var card = {
 	bank:$( "#bank" ).val(),
 	id:$( "#card" ).val(),
 	name:$( "#card option:selected" ).text(),
@@ -82,8 +86,7 @@ function addNewCard(){
 	bpem:$( "#bpem" ).val(),
 	pir:$( "#pir" ).val(),
 	psa:$( "#psa" ).val()
-    }
-    var l = $("#wallet").length;
+	}
 	getCardElement(card, ++nextId, function(elem){
         $("#wallet").append(elem);
 	});
@@ -108,13 +111,24 @@ function editCard(event){
     $( "#pir" ).val(card.pir);
     $( "#psa" ).val(card.psa);
 
+	$( "#add-card" ).data(card);
     $( "#add-card" ).dialog( "option", "title", "Edit Card" );
-    $( "#add-card" ).dialog( "option", "buttons", getButtons(dlgOK, dlgOK));
+    $( "#add-card" ).dialog( "option", "buttons", getButtons(dlgOK, dlgCancel));
     $( "#add-card" ).dialog( "open" );
 }
 
+function dlgCancel(){
+	var card=$( "#add-card" ).data();
+	getCardElement(card, card.id, function(elem){
+        $("#wallet").append(elem);
+	});
+	dlgClose();
+	$( "#add-card" ).dialog( "option", "title", "Add Card" );
+	$( "#add-card" ).dialog( "option", "buttons", getButtons(dlgOK, dlgClose));
+}
+
 function dlgOK(){
-	addNewCard();
+	addCard();
 	dlgClose();
 	$( "#add-card" ).dialog( "option", "title", "Add Card" );
 	$( "#add-card" ).dialog( "option", "buttons", getButtons(dlgOK, dlgClose));
@@ -134,9 +148,14 @@ $(document).ready(function(){
   
   $( "#add-card-link" ).click(function( event ) {
 	$( "#add-card" ).dialog( "open", "Add Card" );
-        $("#bank").empty();
-	$("#bank").append("<option selected=\"selected\">Please wait...</option>");
 	getBank();
+	$("#bank").val(0);
+	$("#card").val(0);
+	$("#ams").val(4000);
+	$("#bpem").val(0);
+	$("#pir").val(19);
+	$("#psa").val(25);
+	$("#af").val("");
 	event.preventDefault();
   });
   
