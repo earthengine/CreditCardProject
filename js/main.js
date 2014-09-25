@@ -61,7 +61,7 @@ function getCardElement(card, id, cont){
     getCardImageById(card.id, function(cardimg){
 		var cardElem = $( "#wallet-card-template" );
 		cardElem = cardElem.children( ".wallet-card" ).clone();
-		cardElem.data(card);
+		cardElem.data("card",card);
 		cardElem.attr("id", "card" + id);
 		var wci = cardElem.children(".wallet-card-image");
 		wci.attr("src","image/cards/" + cardimg);
@@ -84,9 +84,13 @@ function addNewCard(){
 	psa:$( "#psa" ).val()
     }
     var l = $("#wallet").length;
-	getCardElement(card, ++nextId, function(elem){
-        $("#wallet").append(elem);
-	});
+    getCardElement(card, ++nextId, function(elem){
+	var ord = $( "#wallet" ).data("ord");
+	if(typeof ord!=="number")
+	    $("#wallet").append(elem);
+	else
+	    elem.insertBefore($("#wallet").children().get(ord));
+    });
 }
 
 function getButtons(onOK, onCancel){
@@ -94,12 +98,18 @@ function getButtons(onOK, onCancel){
 }
 
 function deleteCard(event){
-	$(event.target).parent().remove();
+        var obj = $(event.target).parent();
+        var ord = obj.index();
+	var last = ord == obj.length;
+	obj.remove();
+	if(last)
+		return undefined;
+	return ord;
 }
 
 function editCard(event){
-    var card = $(event.target).parent().data();
-    deleteCard(event);
+    var card = $(event.target).parent().data("card");
+    var ord = deleteCard(event);
 
     $( "#bank" ).val(card.bank);
     $( "#card" ).val(card.id);
@@ -108,6 +118,7 @@ function editCard(event){
     $( "#pir" ).val(card.pir);
     $( "#psa" ).val(card.psa);
 
+    $( "#wallet" ).data("ord",ord);
     $( "#add-card" ).dialog( "option", "title", "Edit Card" );
     $( "#add-card" ).dialog( "option", "buttons", getButtons(dlgOK, dlgOK));
     $( "#add-card" ).dialog( "open" );
@@ -124,6 +135,19 @@ function dlgClose(){
 	$( "#add-card" ).dialog( "close" );
 }
 
+function getRecommendedCards(){
+       $.ajax({
+               url:'card_recommendation.php',
+               data:{},
+               type:'post',
+               dataType:'html',
+               success:function(cards){
+			$("#card-recommend-list").append(cards);
+               }
+       });
+	$("card_recommendation")
+}
+
 $(document).ready(function(){
   $("#add-card").dialog({
 	autoOpen: false,
@@ -131,6 +155,8 @@ $(document).ready(function(){
 	modal: true,
 	buttons: getButtons(dlgOK, dlgClose)
   });
+
+  getRecommendedCards();
   
   $( "#add-card-link" ).click(function( event ) {
 	$( "#add-card" ).dialog( "open", "Add Card" );

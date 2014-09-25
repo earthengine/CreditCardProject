@@ -35,6 +35,16 @@
             </div>
         </div>
     </div>
+  </div>
+</td>
+<td id="screen-result">
+
+<div id="card-recommend-list">
+	<div class="card-entry" style="display:none">
+		<img class="card-image" />
+		<span class="card-description" />
+	</div>
+</div>
 
 <div id="add-card" title="Add Card">
 	<table>
