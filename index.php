@@ -49,11 +49,9 @@
 <div id="add-card" title="Add Card">
 	<table>
 		<tr><td><label for="bank">Bank</label></td><td><select name="bank" id="bank" onchange="getCard();">
-                	<option selected>- Please select a bank -</option>
                 	<option selected>Please wait...</option>
                 </select></td></tr>
 		<tr><td><label for="card">Card</label></td>
-                    <td><select name="card" id="card" onchange="getCardImage();"></select></td></tr>
                     <td><select name="card" id="card" onchange="getCardImage();"><option selected>Please wait...</option></select></td></tr>
 		<tr><td colspan="2"><div class="box-row">
                 	<div id="cardimage"></div>
