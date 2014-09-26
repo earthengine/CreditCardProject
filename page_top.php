@@ -38,9 +38,9 @@ include 'include/func.php';
 </head>
 
 <body>
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table style="width:100%;position:ralative;" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td valign="middle" class="top-wrapper">
+    <td valign="middle" class="top-wrapper" colspan="2">
       <nav class="top-nav-main">
         <ul>[ #logo ]&nbsp;&nbsp;
           <li><a href="index.php">Home</a></li>
@@ -50,5 +50,5 @@ include 'include/func.php';
       </nav>
   </tr>
   <tr>
-    <td align="center">
+    <td style="vertical-align:top;align:center;" id="screen-query">
     <div class="wrapper">

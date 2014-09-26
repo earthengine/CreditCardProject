@@ -62,7 +62,7 @@ img{
 }
 .content{
 	/*border:1px solid #F00;*/
-	width:1000px;
+	width:700px;
 	padding:20px;
 	/*min-height:400px;*/
 }
@@ -140,7 +140,7 @@ img{
 	display:inline-block;
 	margin-right:15px;
 	width:288px;
-	height:150px;
+	height:200px;
 }
 /* - End of Box Style - */
 
@@ -169,7 +169,33 @@ img{
 	border-color:#060;
 	background:#090;
 }
+#screen-query @media only screen and (max-width : 500px) {
+	width: 100%;
+}
+#screen-query {
+	width: 50%;
+	border-right: 2px solid gray;
+}
+#button-add-card{
+	float:right;
+}
 /* - End of Button Style - */
+
+/* - Card Recommandation Style - */
+.card-entry {
+    display:inline-block;
+    border: 2px solid blue;
+    border-radius: 20px;
+    margin: 10px;
+    padding:5px;
+}
+.card-image {
+    width:100%;
+}
+.card-description {
+}
+
+/* - End of Card Recommandation Style - */
 
 /* - Footer Style - */
 .footer{
@@ -183,9 +209,7 @@ img{
 	margin-top:30px;
 	line-height:1.5;
 }
-#button-add-card{
-	float:right;
-}
+
 /* - End of Footer Style - */
 
 /* - Min Style - */
