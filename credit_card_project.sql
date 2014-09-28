@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 15, 2014 at 03:48 AM
--- Server version: 5.6.16
+-- Generation Time: 2014-09-26 03:37:23
+-- 服务器版本： 5.6.16
 -- PHP Version: 5.5.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `answers`
+-- 表的结构 `answers`
 --
 
 CREATE TABLE IF NOT EXISTS `answers` (
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `answers` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=18 ;
 
 --
--- Dumping data for table `answers`
+-- 转存表中的数据 `answers`
 --
 
 INSERT INTO `answers` (`id`, `qid`, `description`, `order`) VALUES
@@ -60,7 +60,7 @@ INSERT INTO `answers` (`id`, `qid`, `description`, `order`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bank_info`
+-- 表的结构 `bank_info`
 --
 
 CREATE TABLE IF NOT EXISTS `bank_info` (
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `bank_info` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
--- Dumping data for table `bank_info`
+-- 转存表中的数据 `bank_info`
 --
 
 INSERT INTO `bank_info` (`id`, `name`) VALUES
@@ -84,7 +84,7 @@ INSERT INTO `bank_info` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `card_info`
+-- 表的结构 `card_info`
 --
 
 CREATE TABLE IF NOT EXISTS `card_info` (
@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `card_info` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=43 ;
 
 --
--- Dumping data for table `card_info`
+-- 转存表中的数据 `card_info`
 --
 
 INSERT INTO `card_info` (`id`, `card_name`, `bank_id`, `purchase_interest_rate`, `cash_interest_rate`, `bt_interest_rate`, `interest_free_period`, `annual_fee`, `rewards_fee`, `additional_cardholder_fee`, `late_payment_fee`, `over_limit_fee`, `annual_spend_bonus`, `min_credit_limit`, `min_income`, `minimum_monthly_repayment`, `type_of_program`, `travel_insurance`, `purchase_insurance`, `concierge`, `amex_card`, `BT_rate`, `BT_load_fee`, `BT_period`, `IO_bonus_points`, `IO_first_year_fee`, `IO_offer_enddate`, `Qantas_conversion_rate`, `Velocity_conversion_rate`, `points_to_redeem_1`, `points_MEL_SYD_one_way`, `points_myer100`, `info_url`, `image_url`, `referral_url`) VALUES
@@ -136,7 +136,7 @@ INSERT INTO `card_info` (`id`, `card_name`, `bank_id`, `purchase_interest_rate`,
 (3, 'AFF Black', 1, '19.99', '21.49', '19.99', 55, '370.00', '55.00', '10.00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (4, 'ARW Classic', 1, '18.79', '20.99', '18.79', 44, '34.00', '55.00', '10.00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (5, 'ARW Platinum', 1, '18.79', '20.99', '18.79', 55, '94.00', '55.00', '10.00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 'ARW Black', 1, '18.79', '20.99', '18.79', 55, '320.00', '55.00', '10.00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "ANZ_Rewards_Black.jpg", NULL),
+(6, 'ARW Black', 1, '18.79', '20.99', '18.79', 55, '320.00', '55.00', '10.00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'ANZ_Rewards_Black.jpg', NULL),
 (7, 'Balance Visa', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (8, 'Diamond Awards', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (9, 'Diamond Awards QFF', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
@@ -177,7 +177,7 @@ INSERT INTO `card_info` (`id`, `card_name`, `bank_id`, `purchase_interest_rate`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `card_tier_info`
+-- 表的结构 `card_tier_info`
 --
 
 CREATE TABLE IF NOT EXISTS `card_tier_info` (
@@ -191,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `card_tier_info` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=36 ;
 
 --
--- Dumping data for table `card_tier_info`
+-- 转存表中的数据 `card_tier_info`
 --
 
 INSERT INTO `card_tier_info` (`id`, `card_id`, `visa_points_per_dollar`, `amex_points_per_dollar`, `points_cap`, `tier`) VALUES
@@ -234,7 +234,90 @@ INSERT INTO `card_tier_info` (`id`, `card_id`, `visa_points_per_dollar`, `amex_p
 -- --------------------------------------------------------
 
 --
--- Table structure for table `points_per_dollar_spent`
+-- 表的结构 `cc_admin`
+--
+
+CREATE TABLE IF NOT EXISTS `cc_admin` (
+  `cca_username` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `cca_pwd` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`cca_username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 转存表中的数据 `cc_admin`
+--
+
+INSERT INTO `cc_admin` (`cca_username`, `cca_pwd`) VALUES
+('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `cc_admin_action_logs`
+--
+
+CREATE TABLE IF NOT EXISTS `cc_admin_action_logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `admin_event` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `action_by` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `action_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=18 ;
+
+--
+-- 转存表中的数据 `cc_admin_action_logs`
+--
+
+INSERT INTO `cc_admin_action_logs` (`id`, `admin_event`, `action_by`, `action_time`) VALUES
+(1, 'update bank info for bank: 1', 'admin', '2014-09-19 03:46:53'),
+(2, 'update bank info for bank: 2', 'admin', '2014-09-19 11:47:58'),
+(3, 'update bank info for bank: 2', 'admin', '2014-09-19 11:48:02'),
+(4, 'update bank info for bank: 3', 'admin', '2014-09-19 11:49:38'),
+(5, 'update bank info for bank: 1', 'admin', '2014-09-20 21:57:45'),
+(6, 'update bank info for bank: 1', 'admin', '2014-09-20 21:58:33'),
+(7, 'update bank info for bank: 1', 'admin', '2014-09-20 21:58:57'),
+(8, 'update bank info for bank: 3', 'admin', '2014-09-20 22:02:11'),
+(9, 'update bank info for bank: 2', 'admin', '2014-09-20 22:06:22'),
+(13, 'add a new bank info for bank: Hey', 'admin', '2014-09-20 22:16:16'),
+(14, 'update bank info for bank: 1', 'admin', '2014-09-25 11:55:37'),
+(15, 'update bank info for bank: 1', 'admin', '2014-09-25 11:55:42'),
+(16, 'update question: 1', 'admin', '2014-09-26 11:10:30'),
+(17, 'update question: 1', 'admin', '2014-09-26 11:12:17');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `cc_admin_login_logs`
+--
+
+CREATE TABLE IF NOT EXISTS `cc_admin_login_logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cca_username` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `login_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
+
+--
+-- 转存表中的数据 `cc_admin_login_logs`
+--
+
+INSERT INTO `cc_admin_login_logs` (`id`, `cca_username`, `login_time`) VALUES
+(1, 'admin', '2014-09-19 09:19:26'),
+(2, 'admin', '2014-09-19 09:19:46'),
+(3, 'admin', '2014-09-19 09:29:28'),
+(4, 'admin', '2014-09-19 09:34:56'),
+(5, 'admin', '2014-09-19 09:44:47'),
+(6, 'admin', '2014-09-19 11:27:55'),
+(7, 'admin', '2014-09-20 21:30:43'),
+(8, 'admin', '2014-09-20 21:56:58'),
+(9, 'admin', '2014-09-25 11:47:19'),
+(10, 'admin', '2014-09-25 13:57:50'),
+(11, 'admin', '2014-09-26 09:32:44');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `points_per_dollar_spent`
 --
 
 CREATE TABLE IF NOT EXISTS `points_per_dollar_spent` (
@@ -260,7 +343,7 @@ CREATE TABLE IF NOT EXISTS `points_per_dollar_spent` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=16 ;
 
 --
--- Dumping data for table `points_per_dollar_spent`
+-- 转存表中的数据 `points_per_dollar_spent`
 --
 
 INSERT INTO `points_per_dollar_spent` (`id`, `card_id`, `supermarket`, `petrol`, `david_jones`, `entertainment`, `utilities`, `restaurant`, `airlines`, `accomodation`, `cruises`, `travel_agent`, `online`, `foreign_txns`, `insurance`, `government`, `telcos`, `other`) VALUES
@@ -283,7 +366,7 @@ INSERT INTO `points_per_dollar_spent` (`id`, `card_id`, `supermarket`, `petrol`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `questions`
+-- 表的结构 `questions`
 --
 
 CREATE TABLE IF NOT EXISTS `questions` (
@@ -294,7 +377,7 @@ CREATE TABLE IF NOT EXISTS `questions` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
 
 --
--- Dumping data for table `questions`
+-- 转存表中的数据 `questions`
 --
 
 INSERT INTO `questions` (`id`, `description`, `type`) VALUES
@@ -310,7 +393,7 @@ INSERT INTO `questions` (`id`, `description`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_answers`
+-- 表的结构 `user_answers`
 --
 
 CREATE TABLE IF NOT EXISTS `user_answers` (
@@ -327,7 +410,7 @@ CREATE TABLE IF NOT EXISTS `user_answers` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_cards`
+-- 表的结构 `user_cards`
 --
 
 CREATE TABLE IF NOT EXISTS `user_cards` (
