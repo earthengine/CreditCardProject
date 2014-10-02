@@ -1,0 +1,43 @@
+id,card_name,bank_id,purchase_interest_rate,cash_interest_rate,bt_interest_rate,interest_free_period,annual_fee,rewards_fee,additional_card_holder_fee,late_payment_fee,over_limit_fee,annual_spend_bonus,min_credit_limit,min_income,minimum_monthly_repayment,type_of_program,travel_insurance,purchase_insurance,concierge,amex_card,BT_rate,BT_load_fee,BT_period,IO_bonus_points,IO_first_year_fee,IO_offer_enddate,Qantas_conversion_rate,Velocity_conversion_rate,points_to_redeem_1,points_MEL_SYD_one_way,points_myer100,info_url,image_url
+9,AFF Black,2,19.99,21.49,19.99,55,370,55,10,,,,15000,75000,,QFF,1,1,1,1,,0,16,50000,,,,,,8000,15100,http://www.anz.com.au/personal/credit-cards/black/anz-frequentflyer/,AFF Black.jpg
+10,AFF Classic,2,19.99,21.49,19.99,44,40,55,10,,,,1000,15000,,QFF,0,0,0,1,,0,16,50000,,,,,,8000,15100,http://www.anz.com.au/personal/credit-cards/rewards-frequent-flyer/frequent-flyer/,AFF Classic.jpg
+15,AFF Platinum,2,19.99,21.49,19.99,55,240,55,10,,,,6000,50000,,QFF,1,1,1,1,,0,16,50000,,,,,,8000,15100,http://www.anz.com.au/personal/credit-cards/platinum/anz-frequent-flyer/,AFF Platinum.jpg
+19,Altitude,6,19.99,21.49,,45,100,,,,,,1000,,,proprietary,0,0,0,1,,0,,,,,,,,,18200,http://www.westpac.com.au/personal-banking/credit-cards/reward/altitude/?from=leftnav,Altitude.png
+2,Altitude Black,6,19.99,21.49,,45,395,,,,,,15000,,,proprietary,1,1,1,1,,0,,,,,,,,,18200,http://www.westpac.com.au/personal-banking/credit-cards/reward/altitude-black/,Altitude Black.png
+14,Altitude Platinum,6,19.99,21.49,,45,150,,,,,,6000,,,proprietary,1,1,1,1,,0,,,,,,,,,18200,http://www.westpac.com.au/personal-banking/credit-cards/reward/altitude-platinum/?from=leftnav,Altitude Platinum.png
+39,American Express,1,,,,,80,,-1,,,,,35000,1,,1,1,1,0,,0,,,,,,,,,,https://www.americanexpress.com/au/content/the-american-express-card,American Express.jpg
+17,American Express (with Rewards),1,,,,,80,80,-1,,,,,35000,1,Proprietary,1,1,1,0,,0,,,,,1,1,,6900,13500,https://www.americanexpress.com/au/content/the-american-express-card,American Express (with Rewards).jpg
+1,ARW Black,2,18.79,20.99,18.79,55,320,55,10,,,10000,15000,75000,,proprietary,1,1,1,1,,0,16,50000,,,,,,,19980,http://www.anz.com.au/personal/credit-cards/black/anz-rewards/,ARW Black.jpg
+5,ARW Classic,2,18.79,20.99,18.79,44,34,55,10,,,,1000,15000,,proprietary,0,0,0,1,,0,16,50000,,,,,,,19980,http://www.anz.com.au/personal/credit-cards/rewards-frequent-flyer/anz-rewards/,ARW Classic.jpg
+3,ARW Platinum,2,18.79,20.99,18.79,55,94,55,10,,,,6000,50000,,proprietary,1,1,1,1,,0,16,50000,,,,,,,19980,http://www.anz.com.au/personal/credit-cards/platinum/anz-rewards/,ARW Platinum.jpg
+20,Awards,3,20.24,21.24,,55,89,,15,,,,500,,,proprietary,0,0,0,1,,0,,,,,,2.5,,,18600,https://www.commbank.com.au/personal/credit-cards/awards/awards.html,Awards.jpg
+28,Awards QFF,3,20.24,21.24,,55,89,10,15,,,,500,,,QFF,0,0,0,1,,0,,,,,2.5,,,8000,15100,https://www.commbank.com.au/personal/credit-cards/awards/awards.html,Awards QFF.png
+34,Balance Visa,2,,,,,,,,,,,,,,,0,0,0,0,,0,16,,,,,,,,,http://www.anz.com.au/personal/credit-cards/rewards-frequent-flyer/balance-visa/,Balance Visa.png
+40,David Jones Membership Rewards,1,20.74,,,44,99,,29,30,15,,2000,40000,,Proprietary - QFF,1,1,1,0,,0,,30000,99,,0.75,,,,,https://www.americanexpress.com/australia/campaigns/david-jones/gold-30k,David Jones Membership Rewards.jpg
+41,David Jones Platinum Card,1,20.74,,,44,295,,,30,,,2000,65000,,Proprietary - QFF,1,1,1,0,,0,,40000,295,,0.75,,,,,https://www.americanexpress.com/australia/campaigns/david-jones/platinum-40k,David Jones Platinum Card.jpg
+4,Diamond Awards,3,20.24,21.24,,55,425,,15,,,,18000,,,proprietary,1,1,1,1,,0,10,,,,,2,,,18600,https://www.commbank.com.au/personal/credit-cards/awards/diamond.html,Diamond Awards.png
+16,Diamond Awards QFF,3,20.24,21.24,,55,425,10,15,,,,18000,,,QFF,1,1,1,1,,0,10,,,,2,,,8000,15100,https://www.commbank.com.au/personal/credit-cards/awards/diamond.html,Diamond Awards QFF.png
+13,Earth Black,6,19.99,21.49,,45,395,,,,,,15000,,,QFF,1,1,1,1,,0,,,,,,,,8000,15100,http://www.westpac.com.au/personal-banking/credit-cards/reward/earth-black/?from=leftnav,Earth Black.jpg
+29,flyBuys Rewards,5,19.99,21.74,,44,65,,,,,,6000,,,,0,0,0,0,,0,,10000,,19/10/14,,,,,20000,http://www.nab.com.au/personal/credit-cards/nab-flybuys-rewards-card,flyBuys Rewards.jpg
+18,Gold Awards,3,20.24,21.24,,55,144,,15,,,,4000,,,proprietary,0,0,0,1,,0,,,,,,2.5,,,18600,https://www.commbank.com.au/personal/credit-cards/awards/gold.html,Gold Awards.png
+27,Gold Awards QFF,3,20.24,21.24,,55,144,10,15,,,,4000,,,QFF,0,0,0,1,,0,,,,,2.5,,,8000,15100,https://www.commbank.com.au/personal/credit-cards/awards/gold.html,Gold Awards QFF.png
+42,Low Rate,1,11.99,,,55,65,,,,,,,,,,0,0,0,0,0.99,1,6,,65,,,,,,,,Low Rate.jpg
+37,No Annual Fee Mastercard,4,17.99,17.99,,62,,,,,,,,,,,0,0,0,0,,0,,,,,,,,,,,No Annual Fee Mastercard.jpg
+33,Platinum,1,,,,,1200,,,6,15,,,100000,1,Proprietary,1,1,1,0,,0,,80000,1200,,1,1,,6900,13500,https://www.americanexpress.com/au/content/the-platinum-card/,Platinum.jpg
+6,Platinum Awards,3,20.24,21.24,,55,280,,15,,,,6000,,,proprietary,1,1,1,1,,0,,,,,,2,,,18600,https://www.commbank.com.au/personal/credit-cards/awards/platinum.html,Platinum Awards.png
+22,Platinum Awards QFF,3,20.24,21.24,,55,280,10,15,,,,6000,,,QFF,1,1,1,1,,0,,,,,2,,,8000,15100,https://www.commbank.com.au/personal/credit-cards/awards/platinum.html,Platinum Awards QFF.jpg
+21,Platinum Edge Credit Card,1,20.74,,,55,195,,,30,15,,3000,50000,2.5,Proprietary,1,1,1,0,0.99,1,6,10000,195,,1,1,,6900,13500,http://www.americanexpress.com/australia/campaigns/platinumedge/index.shtml,Platinum Edge Credit Card.jpg
+32,Platinum Reserve Credit Card,1,20.74,,,55,395,,,30,15,,3000,65000,2.5,Proprietary,1,1,1,0,99,1,6,30000,395,,1,1,,6900,13500,https://www.americanexpress.com/au/content/platinum-reserve-credit-card,Platinum Reserve Credit Card.jpg
+7,Platinum Rewards,1,20.74,,,55,80,,,,,,,40000,0.025,Proprietary,1,1,1,0,0.99,1,6,,,,1,1,,6900,13500,https://www.americanexpress.com/australia/platinum-rewards-credit-card/,Platinum Rewards.jpg
+24,Qantas American Express Discovery Card,1,20.74,,,44,,,,30,30,,1000,35000,0.03,QFF,1,1,1,0,0.99,1,6,7500,,,1,1,,8000,15100,http://www.americanexpress.com/australia/campaigns/discoverypalms/index.html,Qantas American Express Discovery Card.jpg
+26,Qantas American Express Premium Card,1,20.74,,,44,249,,,30,30,,1000,40000,3,QFF,1,1,1,0,0.99,1,6,30000,149,,1,1,,8000,15100,http://www.americanexpress.com/australia/campaigns/qantaspremiumrtp/index.html,Qantas American Express Premium Card.jpg
+31,Qantas American Express Ultimate Card,1,20.74,,,44,450,,,30,30,,3000,65000,2.5,QFF,1,1,1,0,0.99,1,6,50000,250,,1,1,,8000,15100,http://www.americanexpress.com/australia/campaigns/qantasultimatertp/index.html,Qantas American Express Ultimate Card.jpg
+12,Qantas Rewards,5,19.99,21.74,,44,65,,,,,,500,,,,0,0,0,1,,0,,20000,,19/10/14,,,,8000,15100,http://www.nab.com.au/personal/credit-cards/qantas-credit-cards/nab-qantas-rewards-card,Qantas Rewards.jpg
+8,Qantas Rewards Premium,5,19.99,21.74,,44,250,,,,,,5000,,,,1,1,1,1,,0,,40000,,19/10/14,,,,8000,15100,http://www.nab.com.au/personal/credit-cards/qantas-credit-cards/nab-qantas-rewards-premium-card,Qantas Rewards Premium.jpg
+38,Rewards Mastercard,4,19.99,19.99,,62,49,,,,,,,,,,0,0,0,0,,0,,,,,,,,,,,Rewards Mastercard.png
+11,Singapore Airlines Westpac Platinum,6,19.74,20.49,,45,250,,,,,,,,,other,0,0,0,1,0.0099,0,6,10000,,,,,,8000,15100,http://www.westpac.com.au/personal-banking/credit-cards/reward/singapore-airlines-platinum/,Singapore Airlines Westpac Platinum.png
+23,Velocity Escape Card,1,20.74,,,44,,,,30,,,2000,40000,0.025,Velocity,1,1,1,0,0.99,1,6,7500,,,,1,,6900,13500,http://www.americanexpress.com/australia/velocity-rewards-escapecard,Velocity Escape Card.jpg
+25,Velocity Gold,1,20.74,,,44,199,,,6,15,,3000,40000,0.025,Velocity,1,1,1,0,0.99,1,6,15000,99,,,1,,6900,13500,http://www.americanexpress.com/australia/velocity-rewards-goldcard,Velocity Gold.jpg
+30,Velocity Platinum,1,20.74,,,44,349,,,30,15,,3000,65000,2.5,Velocity,1,1,1,0,0.99,1,6,50000,349,,,1,,6900,13500,http://www.americanexpress.com/australia/velocity-rewards-platinumcard,Velocity Platinum.jpg
+36,Velocity Rewards,5,19.99,21.74,,44,65,,,,,,500,,,,,,,,,,,,,,,,,,,,Velocity Rewards.jpg
+35,Velocity Rewards Premium,5,19.99,21.74,,44,250,,,,,,6000,,,,,,,,,,,,,,,,,,,,Velocity Rewards Premium.jpg

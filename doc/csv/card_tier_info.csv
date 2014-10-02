@@ -1,0 +1,70 @@
+WALLET,,,,,,,,,,,,
+,,,,,,,,,,,,
+Basic Questions,,Card 1,Card 2,Card 3,,,,Wallet Calculation,,,,
+,Bank,CBA,ANZ,,,< lookup list,,average spend per year:,,,,ANZ
+,Card,CBA - Platinum Awards,ANZ - AFF Classic,,,< lookup list based on Bank selected,,3051.3493493494,,,,CBA
+,Average monthly spend,8000,2000,,,< free text,,,,,,Westpac
+,balance paid off each month,All,All,All,,< list of fixed options,,,,,,NAB
+,"** if card has a companion card, option to identify split between the two",50%,20%,25%,,< only available if Amex available on card,,,,,,Coles
+,purchase interest rate, 18.79 , 21.49 ,#N/A,,< use the information from 'data' worksheet,,,,,,American Express
+,annual fees, $94.00 , $-   ,#N/A,,< use the information from 'data' worksheet,,,,,,
+,,,,,,,,,,,,American Express - American Express
+,Monthly Visa Spend,5600,1600,,,,,,,,,American Express - American Express (with Rewards)
+,Monthly Amex Spend,4400,400,,,,,,,,,American Express - David Jones Membership Rewards
+,,,,,,,,,,,,American Express - David Jones Platinum Card
+Advanced Questions,,,,,,,,,,,,American Express - Low Rate
+#,Question,Option 1,Option 2,Filter or Algorithm,,,,,,,,American Express - Platinum
+1,What would you like to redeem your rewards for? (type of rewards program),Air Travel,Any Program; QANTAS; Virgin Velocity; Emirates,F,,,,,,,,American Express - Platinum Edge Credit Card
+,,Hotels,,,,,,,,,,American Express - Platinum Reserve Credit Card
+,,Travel Rewards,,,,,,,,,,American Express - Platinum Rewards
+,,Merchandise/Gift Cards,,,,,,,,,,American Express - Qantas American Express Discovery Card
+,,Cash Back,,,,,,,,,,American Express - Qantas American Express Premium Card
+,,,,,,,,,,,,American Express - Qantas American Express Ultimate Card
+2,How much do you plan to travel in the coming year?,Two or fewer trips,,F,,,,,,,,American Express - Velocity Escape Card
+,,Between three and five trips,,,,,,,,,,American Express - Velocity Gold
+,,More than five trips,,,,,,,,,,American Express - Velocity Platinum
+,,,,,,,,,,,,ANZ - AFF Black
+3,Do you use your debit card frequently?,Yes,"*** could possibly drop this as would be better to capture in ""wallet""",A,,,,,,,,ANZ - AFF Classic
+,,No,,,,,,,,,,ANZ - AFF Platinum
+,,,,,,,,,,,,ANZ - ARW Black
+4,What is your favorite way to shop?,Online,,A,,,,,,,,ANZ - ARW Classic
+,,"Major Stores (e.g. Myer, David Jones)",,,,,,,,,,ANZ - ARW Platinum
+,,Independent Retailers,,,,,,,,,,ANZ - Balance Visa
+,,,,,,,,,,,,CBA - Awards
+5,How much of your shopping is online?,Less than 25%,,A,,,,,,,,CBA - Awards QFF
+,,Between 25 and 50%,,,,,,,,,,CBA - Diamond Awards
+,,Between 50 and 75%,,,,,,,,,,CBA - Diamond Awards QFF
+,,More than 75%,,,,,,,,,,CBA - Gold Awards
+,,,,,,,,,,,,CBA - Gold Awards QFF
+6,What's your annual household income?,** used to set a baseline of averages across categories,150000,A,,,,,,,,CBA - Platinum Awards
+,,,,,,,,,,,,CBA - Platinum Awards QFF
+7,How many in your household,** used to set a baseline of averages across categories,Single; Couple - no kids; Couple - kids,A,,,,,,,,Coles - No Annual Fee Mastercard
+,,,,,,,,,,,,Coles - Rewards Mastercard
+7,Estimate what you spend each month on your credit cards,Groceries (includes take-out)," $1,407.04 ",A,,,,,,,,NAB - flyBuys Rewards
+,,Transport (public and private), $617.95 ,,,,,,,,,NAB - Qantas Rewards
+,,Petrol station, $270.83 ,,,,,,,,,NAB - Qantas Rewards Premium
+,,Recreation/Entertainment, $613.82 ,,,,,,,,,NAB - Velocity Rewards
+,,Household furnishings and equipment, $346.30 ,,,,,,,,,NAB - Velocity Rewards Premium
+,,Medical care and health expenses, $345.38 ,,,,,,,,,Westpac - Altitude
+,,Clothing and footwear, $289.02 ,,,,,,,,,Westpac - Altitude Black
+,,Restaurants, $219.04 ,,,,,,,,,Westpac - Altitude Platinum
+,,Telecommunications, $213.87 ,,,,,,,,,Westpac - Earth Black
+,,Household services and operation, $205.14 ,,,,,,,,,Westpac - Singapore Airlines Westpac Platinum
+,,Utilities (exluding telecommunications), $140.37 ,,,,,,,,,
+,,Airlines, $112.59 ,,,,,,,,,
+,,Accomodation, $105.95 ,,,,,,,,,
+,,Other, $763.05 ,,,,,,,,,
+,,TOTAL," $5,650.34 ",,,,,,,,,
+,,,,,,,,,,,,
+,Filters,,,F,,,,,,,,
+,Features?,Interest Free Days,,,,,,,,,,
+,,Annual Fee under $40,,,,,,,,,,
+,,Travel Insurance,,,,,,,,,,
+,,Purchase Insurance,,,,,,,,,,
+,,Concierge Service,,,,,,,,,,
+,,Gold or Platinum,,,,,,,,,,
+,,Black or Signature,,,,,,,,,,
+,,,,,,,,,,,,
+,Interest Rate Offers,Balance Transfer Only,,F,,,,,,,,
+,,Introductory Rate Offer,,,,,,,,,,
+,,Points Offer,,,,,,,,,,
