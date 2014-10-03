@@ -1,11 +1,13 @@
 <?php
     include 'include/dbconn.php';
-
- 	function annual_points($data){
+	
+	function annual
+	
+ 	function annual_points($data, $cardinfo){
  		$total_points = 0;
  		foreach ($data->cards as &$_cardspend){
  			$cardspend = $_cardspend;
- 			$cardinfo = card_calc_info($cardspend->id);
+ 			//$cardinfo = card_calc_info($cardspend->id);
 
  			$amount_rest = $cardspend->monthly_spend;
  			foreach ($cardinfo->tiers as &$tier){
@@ -27,6 +29,7 @@
  			}
  			$total_points = $total_points * 12;
  			$voucher_per_year = $total_points * 100.0 / $cardinfo->points_myer100;
+			echo $voucher_per_year . "\n";
  			if(is_null($cardinfo->IO_bonus_points))
  				$year1_earning = $voucher_per_year;
  			else
@@ -35,7 +38,7 @@
  			if(!is_null($cardinfo->IO_first_year_fee))
  				$year1_earning = $year1_earning - $cardinfo->IO_first_year_fee;
  			$year2_3earning = ($voucher_per_year
- 				- $cardinfo->annual_fee - $cardinfo->rewards_fee) * 2;		
+ 				- $cardinfo->annual_fee - $cardinfo->rewards_fee) * 2;
  		}
  		
  		return array("total_points" => $total_points, 
@@ -50,21 +53,24 @@
  				"FROM card_info WHERE id = $id";
  		$rs = mysqli_query($conn, $select_card);
  		if( mysqli_num_rows($rs) != 0 ){
- 			$result = mysqli_fetch_array($rs);
- 			$select_tier = "SELECT card_id,visa_points_per_dollar,amex_points_per_dollar, " .
- 	 					   "points_cap FROM card_tier_info WHERE card_id = $id ORDER BY " .
- 						   "tier ASC";
- 			$rs = mysqli_query($conn, $select_tier);
- 			$tiers = [];
- 			if( mysqli_num_rows($rs) != 0){
- 				$cnt = 0;
- 				while($row = mysqli_fetch_array($rs)){
- 					$tiers[$cnt] = (object)$row;
- 					$cnt = $cnt + 1;
- 				}
- 			} 			
- 			$result["tiers"] = $tiers;
- 			return (object)$result;
+			$result = [];
+			while($row_card = mysqli_fetch_array($rs)){
+				$select_tier = "SELECT card_id,visa_points_per_dollar,amex_points_per_dollar, " .
+							   "points_cap FROM card_tier_info WHERE card_id = $id ORDER BY " .
+							   "tier ASC";
+				$rs = mysqli_query($conn, $select_tier);
+				$tiers = [];
+				if( mysqli_num_rows($rs) != 0){
+					$cnt = 0;
+					while($row = mysqli_fetch_array($rs)){
+						$tiers[$cnt] = (object)$row;
+						$cnt = $cnt + 1;
+					}
+				} 			
+				$row_card["tiers"] = $tiers;
+				$result[$row_card['id']] = (object)$row_card;
+			}
+ 			return $result;
  		}
  	}
  	
