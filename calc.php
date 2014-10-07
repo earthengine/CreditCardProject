@@ -1,15 +1,30 @@
 <?php
     include 'include/dbconn.php';
+    
+    function sort_cards($data, $cardinfos){
+    	$card_earnings = [];
+    	foreach ($cardinfos as &$cardinfo){
+			foreach (earning($data, $cardinfo) as &$earning){
+				if(!array_key_exists($earning["compare_id"])
+					|| $card_earnings[$earning["compare_id"]] < 
+						$earning["total_wallet_earnings"]){
+					$card_earnings[$earning["compare_id"]] =$earning["total_wallet_earnings"]; 
+				}
+			}
+    	}
+    	arsort($card_earnings);
+    	reset($card_earnings);
+    	return $card_earnings;
+    }
 
- 	function annual_points($data){
- 		$total_points = 0;
+ 	function earning($data, $cardinfo){
+ 		$result = [];
+ 		$idx = 0;
  		foreach ($data->cards as &$_cardspend){
- 			$cardspend = $_cardspend;
- 			$cardinfo = card_calc_info($cardspend->id);
-
+ 			$cardspend = $_cardspend;			
  			$amount_rest = $cardspend->monthly_spend;
- 			foreach ($cardinfo->tiers as &$tier){
- 					if($cardinfo->amex_card=="1"){
+ 			foreach ($cardinfo->tiers as &$tier){				
+ 				if($cardinfo->amex_card=="1"){
 	 				$avg_points_per_dollar = ($tier->visa_points_per_dollar * 
 	 					(100.0 - $cardspend->amex_percent) + $tier->amex_points_per_dollar *
 	 					$cardspend->amex_percent)/100.0;
@@ -35,37 +50,50 @@
  			if(!is_null($cardinfo->IO_first_year_fee))
  				$year1_earning = $year1_earning - $cardinfo->IO_first_year_fee;
  			$year2_3earning = ($voucher_per_year
- 				- $cardinfo->annual_fee - $cardinfo->rewards_fee) * 2;		
- 		}
- 		
- 		return array("total_points" => $total_points, 
+ 				- $cardinfo->annual_fee - $cardinfo->rewards_fee) * 2;
+ 			$result[$idx] = array("wallet_id" => $card->id,
+ 				"compare_id" => $cardinfo->id, 
+ 				"total_points" => $total_points, 
  				"total_wallet_earnings" => $year1_earning + $year2_3earning);
+ 		}
+ 		return $result;
+ 	}
+ 	
+ 	function card_name($id){
+ 		global $conn;
+ 		$select_card = "SELECT id, card_name FROM card_info WHERE id=" . $id;
+ 		$rs_card = mysqli_query($conn, $select_card);
+ 		if(mysqli_num_rows($rs_card)!=0){
+ 			return mysqli_fetch_array($rs_card)["card_name"]; 			
+ 		}
  	}
 
- 	function card_calc_info($id){
+ 	function card_calc_infos(){
  		global $conn;
  		$select_card = "SELECT id,amex_card,purchase_interest_rate,".
  	 			"coalesce(annual_fee,0) as annual_fee,coalesce(rewards_fee,0) as rewards_fee,".
  	 			"IO_bonus_points,IO_first_year_fee,points_myer100 ".
- 				"FROM card_info WHERE id = $id";
- 		$rs = mysqli_query($conn, $select_card);
- 		if( mysqli_num_rows($rs) != 0 ){
- 			$result = mysqli_fetch_array($rs);
- 			$select_tier = "SELECT card_id,visa_points_per_dollar,amex_points_per_dollar, " .
- 	 					   "points_cap FROM card_tier_info WHERE card_id = $id ORDER BY " .
- 						   "tier ASC";
- 			$rs = mysqli_query($conn, $select_tier);
- 			$tiers = [];
- 			if( mysqli_num_rows($rs) != 0){
- 				$cnt = 0;
- 				while($row = mysqli_fetch_array($rs)){
- 					$tiers[$cnt] = (object)$row;
- 					$cnt = $cnt + 1;
- 				}
- 			} 			
- 			$result["tiers"] = $tiers;
- 			return (object)$result;
+ 				"FROM card_info";
+ 		$rs_card = mysqli_query($conn, $select_card);
+ 		$result = []; 		
+ 		if( mysqli_num_rows($rs_card) != 0 ){ 			
+ 			while($card = mysqli_fetch_array($rs_card)){
+	 			$select_tier = "SELECT card_id,visa_points_per_dollar,amex_points_per_dollar, " .
+	 	 					   "points_cap FROM card_tier_info WHERE card_id = $id ORDER BY " .
+	 						   "tier ASC";
+	 			$rs = mysqli_query($conn, $select_tier);
+	 			$tiers = [];
+	 			if( mysqli_num_rows($rs) != 0){
+	 				$cnt = 0;
+	 				while($row = mysqli_fetch_array($rs)){
+	 					$tiers[$cnt] = (object)$row;
+	 					$cnt = $cnt + 1;
+	 				}
+	 			}
+	 			$result[$card["id"]] = (object)$card;
+ 			}
  		}
+ 		return $result;
  	}
  	
  	function amount_compare($a, $b){
@@ -88,17 +116,22 @@
  		}
  		echo "case " . $case . " passed\n";
  	}
-
-	verify("1", json_decode(
-			 '{"cards":[{"id":5,"monthly_spend":4000,"balance_percent":100,' .
+ 	
+ 	echo card_name(key(sort_cards(json_decode(
+			 '{"cards":[{"id":11,"monthly_spend":4000,"balance_percent":100,' .
 			  '"amex_percent":20}],' .
-			  '"answers":[1,2,1,1,1,1]}', false), 52800, 865.04304304304);
-	verify("2", json_decode(
-			 '{"cards":[{"id":13,"monthly_spend":8000,"balance_percent":100,' .
-			  '"amex_percent":50}],' .
-			  '"answers":[1,2,1,1,1,1]}', false), 102000, 1236.49);
-	verify("3", json_decode(
-			 '{"cards":[{"id":6,"monthly_spend":10000,"balance_percent":100,' .
-			  '"amex_percent":50}],' .
-			  '"answers":[1,2,1,1,1,1]}', false), 1800000, 1236.49);
+			  '"answers":[1,2,1,1,1,1]}', false),card_calc_infos())));
+
+//	verify("1", json_decode(
+//			 '{"cards":[{"id":5,"monthly_spend":4000,"balance_percent":100,' .
+//			  '"amex_percent":20}],' .
+//			  '"answers":[1,2,1,1,1,1]}', false), 52800, 865.04304304304);
+//	verify("2", json_decode(
+//			 '{"cards":[{"id":13,"monthly_spend":8000,"balance_percent":100,' .
+//			  '"amex_percent":50}],' .
+//			  '"answers":[1,2,1,1,1,1]}', false), 102000, 1236.49);
+//	verify("3", json_decode(
+//			 '{"cards":[{"id":6,"monthly_spend":10000,"balance_percent":100,' .
+//			  '"amex_percent":50}],' .
+//			  '"answers":[1,2,1,1,1,1]}', false), 1800000, 1236.49);
 ?>
