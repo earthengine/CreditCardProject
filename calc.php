@@ -2,10 +2,11 @@
     include 'include/dbconn.php';
     
     function sort_cards($data, $cardinfos){
-    	$card_earnings = [];
+    	$card_earnings = array();
     	foreach ($cardinfos as &$cardinfo){
-			foreach (earning($data, $cardinfo) as &$earning){
-				if(!array_key_exists($earning["compare_id"])
+    		$earnings = earning($data, $cardinfo);
+			foreach ($earnings as &$earning){
+				if(!array_key_exists($earning["compare_id"], $cardinfos)
 					|| $card_earnings[$earning["compare_id"]] < 
 						$earning["total_wallet_earnings"]){
 					$card_earnings[$earning["compare_id"]] =$earning["total_wallet_earnings"]; 
@@ -18,12 +19,17 @@
     }
 
  	function earning($data, $cardinfo){
- 		$result = [];
+ 		$result = array();
  		$idx = 0;
  		foreach ($data->cards as &$_cardspend){
+ 			if(is_null($cardinfo->points_myer100))
+ 				continue;
+ 			
  			$cardspend = $_cardspend;			
  			$amount_rest = $cardspend->monthly_spend;
- 			foreach ($cardinfo->tiers as &$tier){				
+ 			foreach ($cardinfo->tiers as &$tier){
+ 				if(is_null($avg_points_per_dollar))
+ 					break;			
  				if($cardinfo->amex_card=="1"){
 	 				$avg_points_per_dollar = ($tier->visa_points_per_dollar * 
 	 					(100.0 - $cardspend->amex_percent) + $tier->amex_points_per_dollar *
@@ -64,7 +70,8 @@
  		$select_card = "SELECT id, card_name FROM card_info WHERE id=" . $id;
  		$rs_card = mysqli_query($conn, $select_card);
  		if(mysqli_num_rows($rs_card)!=0){
- 			return mysqli_fetch_array($rs_card)["card_name"]; 			
+ 			$result = mysqli_fetch_array($rs_card); 
+ 			return $result["card_name"];
  		}
  	}
 
@@ -75,21 +82,23 @@
  	 			"IO_bonus_points,IO_first_year_fee,points_myer100 ".
  				"FROM card_info";
  		$rs_card = mysqli_query($conn, $select_card);
- 		$result = []; 		
+ 		$result = array(); 		
  		if( mysqli_num_rows($rs_card) != 0 ){ 			
  			while($card = mysqli_fetch_array($rs_card)){
 	 			$select_tier = "SELECT card_id,visa_points_per_dollar,amex_points_per_dollar, " .
-	 	 					   "points_cap FROM card_tier_info WHERE card_id = $id ORDER BY " .
+	 	 					   "points_cap FROM card_tier_info WHERE card_id = "
+	 	 					   	. $card["id"] . " ORDER BY " .
 	 						   "tier ASC";
 	 			$rs = mysqli_query($conn, $select_tier);
-	 			$tiers = [];
-	 			if( mysqli_num_rows($rs) != 0){
+	 			$tiers = array();
+	 			if( !$rs || mysqli_num_rows($rs) != 0){
 	 				$cnt = 0;
 	 				while($row = mysqli_fetch_array($rs)){
 	 					$tiers[$cnt] = (object)$row;
 	 					$cnt = $cnt + 1;
 	 				}
 	 			}
+	 			$card["tiers"] = $tiers;
 	 			$result[$card["id"]] = (object)$card;
  			}
  		}
@@ -117,10 +126,11 @@
  		echo "case " . $case . " passed\n";
  	}
  	
+ 	$cinfo = card_calc_infos();
  	echo card_name(key(sort_cards(json_decode(
 			 '{"cards":[{"id":11,"monthly_spend":4000,"balance_percent":100,' .
 			  '"amex_percent":20}],' .
-			  '"answers":[1,2,1,1,1,1]}', false),card_calc_infos())));
+			  '"answers":[1,2,1,1,1,1]}', false),$cinfo)));
 
 //	verify("1", json_decode(
 //			 '{"cards":[{"id":5,"monthly_spend":4000,"balance_percent":100,' .
