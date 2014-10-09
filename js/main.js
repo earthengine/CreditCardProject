@@ -142,6 +142,7 @@ function getRecommendedCards(){
                type:'post',
                dataType:'html',
                success:function(cards){
+            $("#card-recommend-list").empty();
 			$("#card-recommend-list").append(cards);
                }
        });
