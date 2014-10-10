@@ -139,6 +139,7 @@ function dlgEditOK(card, element){
 	wallet.deleteCard(card);
 	var editedCard = {
 		bank:$( "#bank" ).val(),
+		id:$( "#card" ).val(),
 		name:$( "#card option:selected" ).text(),
 		ams:$( "#ams" ).val(),
 		bpem:$( "#bpem" ).val(),
