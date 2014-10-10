@@ -34,6 +34,7 @@ include 'include/func.php';
 </style>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/card.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </head>
 

@@ -1,12 +1,3 @@
-function editCard(i, cont){
-    var req = $.ajax({
-		url: "interface/get_card.php",
-		type: "GET",
-		data: { id : i },
-		dataType: "html",
-                success: cont});
-}
-
 function getBank() {
        $.ajax({
                url:'get_bank.php',
@@ -37,6 +28,20 @@ function getCard(){
        });
 }
 
+function getRecommendedCards(){
+       $.ajax({
+               url:'card_recommendation.php',
+               data:{},
+               type:'post',
+               dataType:'html',
+               success:function(cards){
+            $("#card-recommend-list").empty();
+			$("#card-recommend-list").append(cards);
+               }
+       });
+	$("card_recommendation")
+}
+
 function getCardImageById(card, cont){
        $("#cardimage").empty();
        $.ajax({
@@ -55,14 +60,14 @@ function getCardImage(){
     });
 }
 
-var nextId = 0;
+var wallet = Wallet();
 
-function getCardElement(card, id, cont){
+function getCardElement(card, cont){
     getCardImageById(card.id, function(cardimg){
 		var cardElem = $( "#wallet-card-template" );
 		cardElem = cardElem.children( ".wallet-card" ).clone();
 		cardElem.data("card",card);
-		cardElem.attr("id", "card" + id);
+		cardElem.attr("id", "card_" + card.name+ "_" + card.ams);
 		var wci = cardElem.children(".wallet-card-image");
 		wci.attr("src","image/cards/" + cardimg);
 		wci.attr("alt",card.name);
@@ -75,21 +80,17 @@ function getCardElement(card, id, cont){
 
 function addNewCard(){
     var card = {
-	bank:$( "#bank" ).val(),
-	id:$( "#card" ).val(),
-	name:$( "#card option:selected" ).text(),
-	ams:$( "#ams" ).val(),
-	bpem:$( "#bpem" ).val(),
-	pir:$( "#pir" ).val(),
-	psa:$( "#psa" ).val()
+		bank:$( "#bank" ).val(),
+		id:$( "#card" ).val(),
+		name:$( "#card option:selected" ).text(),
+		ams:$( "#ams" ).val(),
+		bpem:$( "#bpem" ).val(),
+		pir:$( "#pir" ).val(),
+		psa:$( "#psa" ).val()
     }
-    var l = $("#wallet").length;
-    getCardElement(card, ++nextId, function(elem){
-	var ord = $( "#wallet" ).data("ord");
-	if(typeof ord!=="number")
-	    $("#wallet").append(elem);
-	else
-	    elem.insertBefore($("#wallet").children().get(ord));
+	wallet.addCard(card);
+    getCardElement(card, function(elem){
+		$("#wallet").append(elem);
     });
 }
 
@@ -98,18 +99,14 @@ function getButtons(onOK, onCancel){
 }
 
 function deleteCard(event){
-        var obj = $(event.target).parent();
-        var ord = obj.index();
-	var last = ord == obj.length;
+    var obj = $(event.target).parent();
+    var ord = obj.index();
+	wallet.deleteCard(obj.data("card"));
 	obj.remove();
-	if(last)
-		return undefined;
-	return ord;
 }
 
 function editCard(event){
     var card = $(event.target).parent().data("card");
-    var ord = deleteCard(event);
 
     $( "#bank" ).val(card.bank);
     $( "#card" ).val(card.id);
@@ -118,35 +115,50 @@ function editCard(event){
     $( "#pir" ).val(card.pir);
     $( "#psa" ).val(card.psa);
 
-    $( "#wallet" ).data("ord",ord);
     $( "#add-card" ).dialog( "option", "title", "Edit Card" );
-    $( "#add-card" ).dialog( "option", "buttons", getButtons(dlgOK, dlgOK));
+    $( "#add-card" ).dialog( "option", "buttons", getButtons(function(){ 
+		dlgEditOK(card, $(event.target).parent()) 
+	}, dlgClose));
     $( "#add-card" ).dialog( "open" );
 }
 
-function dlgOK(){
+function updateCardElement(cardElem, card){
+    getCardImageById(card.id, function(cardimg){
+		cardElem.data("card",card);
+		cardElem.attr("id", "card_" + card.name+ "_" + card.ams);
+		var wci = cardElem.children(".wallet-card-image");
+		wci.attr("src","image/cards/" + cardimg);
+		wci.attr("alt",card.name);
+		cardElem.children(".wallet-label").text(card.name);
+		cardElem.children(".delete-card").click(deleteCard);
+		cardElem.children(".edit-card").click(editCard);
+	});
+}
+
+function dlgEditOK(card, element){
+	wallet.deleteCard(card);
+	var editedCard = {
+		bank:$( "#bank" ).val(),
+		name:$( "#card option:selected" ).text(),
+		ams:$( "#ams" ).val(),
+		bpem:$( "#bpem" ).val(),
+		pir:$( "#pir" ).val(),
+		psa:$( "#psa" ).val()
+    }
+	wallet.addCard(editedCard);
+    updateCardElement(element, editedCard);
+	dlgClose();
+}
+
+function dlgAddOK(){
 	addNewCard();
 	dlgClose();
 	$( "#add-card" ).dialog( "option", "title", "Add Card" );
-	$( "#add-card" ).dialog( "option", "buttons", getButtons(dlgOK, dlgClose));
+	$( "#add-card" ).dialog( "option", "buttons", getButtons(dlgAddOK, dlgClose));
 }
 
 function dlgClose(){
 	$( "#add-card" ).dialog( "close" );
-}
-
-function getRecommendedCards(){
-       $.ajax({
-               url:'card_recommendation.php',
-               data:{},
-               type:'post',
-               dataType:'html',
-               success:function(cards){
-            $("#card-recommend-list").empty();
-			$("#card-recommend-list").append(cards);
-               }
-       });
-	$("card_recommendation")
 }
 
 $(document).ready(function(){
@@ -154,14 +166,14 @@ $(document).ready(function(){
 	autoOpen: false,
 	width: 500,
 	modal: true,
-	buttons: getButtons(dlgOK, dlgClose)
+	buttons: getButtons(dlgAddOK, dlgClose)
   });
 
   getRecommendedCards();
   
   $( "#add-card-link" ).click(function( event ) {
 	$( "#add-card" ).dialog( "open", "Add Card" );
-        $("#bank").empty();
+    $("#bank").empty();
 	$("#bank").append("<option selected=\"selected\">Please wait...</option>");
 	getBank();
 	event.preventDefault();
