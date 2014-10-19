@@ -13,9 +13,22 @@ if(isset($_REQUEST["wallet"])){
 if(isset($wallet) && sizeof($wallet->cards)>0){
 	$cis = card_calc_infos();
 	$sorted = sort_cards($wallet, $cis);
+}
+	
+if(isset($sorted) && sizeof($sorted)>0){
+	
+    $result = "(";
+	$cnt = 0;
+    foreach ($sorted as $id => $card_earning){
+    	$cnt = $cnt+1;
+    	if($cnt==10)
+    		break;
+    	$result = $result . $id . ',';
+    }
+    $result = preg_replace('/,$/',')',$result);
 
 	$select = "SELECT id, COALESCE(image_url,CONCAT(card_name,'.jpg')) AS image, ".
-			"referral_url, card_name FROM card_info WHERE id in " . $sorted;
+			"referral_url, card_name FROM card_info WHERE id in " . $result;
 } else {
 	$select = "SELECT id, COALESCE(image_url,CONCAT(card_name,'.jpg')) AS image, referral_url, card_name FROM card_info order by Rand() LIMIT 10";
 }

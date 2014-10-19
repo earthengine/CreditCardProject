@@ -88,6 +88,14 @@ function getCardElement(card, cont){
 	});
 }
 
+function addNewCardRaw(card){
+    wallet.addCard(card);
+    getRecommendedCards();
+    getCardElement(card, function(elem){
+		$("#wallet").append(elem);
+    });
+}
+
 function addNewCard(){
     var card = {
 		bank:$( "#bank" ).val(),
@@ -97,28 +105,21 @@ function addNewCard(){
 		bpem:$( "#bpem" ).val(),
 		psa:$( "#psa" ).val()
     };
-    wallet.addCard(card);
-    getRecommendedCards();
-    getCardElement(card, function(elem){
-		$("#wallet").append(elem);
-    });
+	addNewCardRaw(card);
 }
 
 function addServerWalletCard(serverCard){
     getCardBank(card.id, function(cb){
-	var card = {
-	    bank: cb.bank,
-	    id: serverCard.id,
-	    name: cb.name,
-	    ams: serverCard.monthly_spend,
-	    bpem: serverCard.balance_percent,
-	    psa: serverCard.amex_percent
-	};
-	wallet.addCard(card);
-	getCardElement(card, function(elem){
-	    $("#wallet").append(elem);
-        });
-    });
+		var card = {
+			bank: cb.bank,
+			id: serverCard.id,
+			name: cb.name,
+			ams: serverCard.monthly_spend,
+			bpem: serverCard.balance_percent,
+			psa: serverCard.amex_percent
+		};
+		addNewCardRaw(card);
+	});
 }
 
 function getButtons(onOK, onCancel){

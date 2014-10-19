@@ -1,10 +1,9 @@
-
 -- phpMyAdmin SQL Dump
 -- version 2.11.4
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 09, 2014 at 08:26 PM
+-- Generation Time: Oct 19, 2014 at 05:05 AM
 -- Server version: 5.1.57
 -- PHP Version: 5.2.17
 
@@ -60,18 +59,18 @@ CREATE TABLE `bank_info` (
   `id` int(2) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) CHARACTER SET latin1 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=52 ;
 
 --
 -- Dumping data for table `bank_info`
 --
 
-INSERT INTO `bank_info` VALUES(1, 'ANZ');
-INSERT INTO `bank_info` VALUES(2, 'CBA');
-INSERT INTO `bank_info` VALUES(3, 'Westpac');
-INSERT INTO `bank_info` VALUES(4, 'NAB');
-INSERT INTO `bank_info` VALUES(5, 'Coles');
-INSERT INTO `bank_info` VALUES(6, 'American Express');
+INSERT INTO `bank_info` VALUES(2, 'ANZ');
+INSERT INTO `bank_info` VALUES(3, 'CBA');
+INSERT INTO `bank_info` VALUES(6, 'Westpac');
+INSERT INTO `bank_info` VALUES(5, 'NAB');
+INSERT INTO `bank_info` VALUES(4, 'Coles');
+INSERT INTO `bank_info` VALUES(1, 'American Express');
 
 -- --------------------------------------------------------
 
@@ -123,17 +122,17 @@ CREATE TABLE `card_info` (
 -- Dumping data for table `card_info`
 --
 
-INSERT INTO `card_info` VALUES(1, 'ARW Black', 2, 18.79, 20.99, 18.79, 55, 320.00, 55.00, 10.00, NULL, NULL, 10000, 15000, 75000, NULL, 'proprietary', '', '', '', '', NULL, 0.00, 16, 50000, NULL, NULL, NULL, NULL, NULL, NULL, 19980, '', 'http://www.anz.com.au/personal/credit-cards/black/anz-rewards/', 'ARW Black.jpg', NULL);
+INSERT INTO `card_info` VALUES(1, 'ARW Black', 2, 18.79, 20.99, 18.79, 55, 320.00, 55.00, 10.00, NULL, NULL, 10000, 15000, 75000, NULL, 'proprietary', '', '', '', '', NULL, 0.00, 16, 50000, NULL, NULL, NULL, NULL, NULL, NULL, 19980, '', 'http://www.anz.com.au/personal/credit-cards/black/anz-rewards/', 'ANZ_Rewards_Black.jpg', NULL);
 INSERT INTO `card_info` VALUES(2, 'Altitude Black', 6, 19.99, 21.49, NULL, 45, 395.00, NULL, NULL, NULL, NULL, NULL, 15000, NULL, NULL, 'proprietary', '', '', '', '', NULL, 0.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 18200, '', 'http://www.westpac.com.au/personal-banking/credit-cards/reward/altitude-black/', 'Altitude Black.png', NULL);
 INSERT INTO `card_info` VALUES(3, 'ARW Platinum', 2, 18.79, 20.99, 18.79, 55, 94.00, 55.00, 10.00, NULL, NULL, NULL, 6000, 50000, NULL, 'proprietary', '', '', '', '', NULL, 0.00, 16, 50000, NULL, NULL, NULL, NULL, NULL, NULL, 19980, '', 'http://www.anz.com.au/personal/credit-cards/platinum/anz-rewards/', 'ARW Platinum.jpg', NULL);
 INSERT INTO `card_info` VALUES(4, 'Diamond Awards', 3, 20.24, 21.24, NULL, 55, 425.00, NULL, 15.00, NULL, NULL, NULL, 18000, NULL, NULL, 'proprietary', '', '', '', '', NULL, 0.00, 10, NULL, NULL, NULL, NULL, 2.00, NULL, NULL, 18600, '', 'https://www.commbank.com.au/personal/credit-cards/awards/diamond.html', 'Diamond Awards.png', NULL);
 INSERT INTO `card_info` VALUES(5, 'ARW Classic', 2, 18.79, 20.99, 18.79, 44, 34.00, 55.00, 10.00, NULL, NULL, NULL, 1000, 15000, NULL, 'proprietary', '\0', '\0', '\0', '', NULL, 0.00, 16, 50000, NULL, NULL, NULL, NULL, NULL, NULL, 19980, '', 'http://www.anz.com.au/personal/credit-cards/rewards-frequent-flyer/anz-rewards/', 'ARW Classic.jpg', NULL);
 INSERT INTO `card_info` VALUES(6, 'Platinum Awards', 3, 20.24, 21.24, NULL, 55, 280.00, NULL, 15.00, NULL, NULL, NULL, 6000, NULL, NULL, 'proprietary', '', '', '', '', NULL, 0.00, NULL, NULL, NULL, NULL, NULL, 2.00, NULL, NULL, 18600, '', 'https://www.commbank.com.au/personal/credit-cards/awards/platinum.html', 'Platinum Awards.png', NULL);
-INSERT INTO `card_info` VALUES(7, 'Platinum Rewards', 1, 20.74, NULL, NULL, 55, 80.00, NULL, NULL, NULL, NULL, NULL, NULL, 40000, 0.03, 'Proprietary', '', '', '', '\0', 0.99, 1.00, 6, NULL, NULL, NULL, 1.00, 1.00, NULL, 6900, 13500, '', 'https://www.americanexpress.com/australia/platinum-rewards-credit-card/', 'Platinum Rewards.jpg', NULL);
+INSERT INTO `card_info` VALUES(7, 'Platinum Rewards', 1, 20.74, NULL, NULL, 55, 80.00, NULL, NULL, NULL, NULL, NULL, NULL, 40000, 0.03, 'Proprietary', '', '', '', '\0', 0.99, 1.00, 6, NULL, NULL, NULL, 1.00, 1.00, NULL, 6900, 13500, '', 'https://www.americanexpress.com/australia/platinum-rewards-credit-card/', 'Platinum Rewards.png', NULL);
 INSERT INTO `card_info` VALUES(8, 'Qantas Rewards Premium', 5, 19.99, 21.74, NULL, 44, 250.00, NULL, NULL, NULL, NULL, NULL, 5000, NULL, NULL, NULL, '', '', '', '', NULL, 0.00, NULL, 40000, NULL, '2019-10-14', NULL, NULL, NULL, 8000, 15100, '', 'http://www.nab.com.au/personal/credit-cards/qantas-credit-cards/nab-qantas-rewards-premium-card', 'Qantas Rewards Premium.jpg', NULL);
 INSERT INTO `card_info` VALUES(9, 'AFF Black', 2, 19.99, 21.49, 19.99, 55, 370.00, 55.00, 10.00, NULL, NULL, NULL, 15000, 75000, NULL, 'QFF', '', '', '', '', NULL, 0.00, 16, 50000, NULL, NULL, NULL, NULL, NULL, 8000, 15100, '', 'http://www.anz.com.au/personal/credit-cards/black/anz-frequentflyer/', 'AFF Black.jpg', NULL);
 INSERT INTO `card_info` VALUES(10, 'AFF Classic', 2, 19.99, 21.49, 19.99, 44, 40.00, 55.00, 10.00, NULL, NULL, NULL, 1000, 15000, NULL, 'QFF', '\0', '\0', '\0', '', NULL, 0.00, 16, 50000, NULL, NULL, NULL, NULL, NULL, 8000, 15100, '', 'http://www.anz.com.au/personal/credit-cards/rewards-frequent-flyer/frequent-flyer/', 'AFF Classic.jpg', NULL);
-INSERT INTO `card_info` VALUES(11, 'Singapore Airlines Westpac Platinum', 6, 19.74, 20.49, NULL, 45, 250.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'other', '\0', '\0', '\0', '', 0.01, 0.00, 6, 10000, NULL, NULL, NULL, NULL, NULL, 8000, 15100, '', 'http://www.westpac.com.au/personal-banking/credit-cards/reward/singapore-airlines-platinum/', 'Singapore Airlines Westpac Platinum.png', NULL);
+INSERT INTO `card_info` VALUES(11, 'Singapore Airlines Westpac Platinum', 6, 19.74, 20.49, NULL, 45, 250.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'other', '\0', '\0', '\0', '', 0.01, 0.00, 6, 10000, NULL, NULL, NULL, NULL, NULL, 8000, 15100, '', 'http://www.westpac.com.au/personal-banking/credit-cards/reward/singapore-airlines-platinum/', 'Singapore Airlines Westpac Platinum.jpeg', NULL);
 INSERT INTO `card_info` VALUES(12, 'Qantas Rewards', 5, 19.99, 21.74, NULL, 44, 65.00, NULL, NULL, NULL, NULL, NULL, 500, NULL, NULL, NULL, '\0', '\0', '\0', '', NULL, 0.00, NULL, 20000, NULL, '2019-10-14', NULL, NULL, NULL, 8000, 15100, '', 'http://www.nab.com.au/personal/credit-cards/qantas-credit-cards/nab-qantas-rewards-card', 'Qantas Rewards.jpg', NULL);
 INSERT INTO `card_info` VALUES(13, 'Earth Black', 6, 19.99, 21.49, NULL, 45, 395.00, NULL, NULL, NULL, NULL, NULL, 15000, NULL, NULL, 'QFF', '', '', '', '', NULL, 0.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 8000, 15100, '', 'http://www.westpac.com.au/personal-banking/credit-cards/reward/earth-black/?from=leftnav', 'Earth Black.jpg', NULL);
 INSERT INTO `card_info` VALUES(14, 'Altitude Platinum', 6, 19.99, 21.49, NULL, 45, 150.00, NULL, NULL, NULL, NULL, NULL, 6000, NULL, NULL, 'proprietary', '', '', '', '', NULL, 0.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 18200, '', 'http://www.westpac.com.au/personal-banking/credit-cards/reward/altitude-platinum/?from=leftnav', 'Altitude Platinum.png', NULL);
@@ -142,29 +141,29 @@ INSERT INTO `card_info` VALUES(16, 'Diamond Awards QFF', 3, 20.24, 21.24, NULL, 
 INSERT INTO `card_info` VALUES(17, 'American Express (with Rewards)', 1, NULL, NULL, NULL, NULL, 80.00, 80.00, -1.00, NULL, NULL, NULL, NULL, 35000, 1.00, 'Proprietary', '', '', '', '\0', NULL, 0.00, NULL, NULL, NULL, NULL, 1.00, 1.00, NULL, 6900, 13500, '', 'https://www.americanexpress.com/au/content/the-american-express-card', 'American Express (with Rewards).jpg', NULL);
 INSERT INTO `card_info` VALUES(18, 'Gold Awards', 3, 20.24, 21.24, NULL, 55, 144.00, NULL, 15.00, NULL, NULL, NULL, 4000, NULL, NULL, 'proprietary', '\0', '\0', '\0', '', NULL, 0.00, NULL, NULL, NULL, NULL, NULL, 2.50, NULL, NULL, 18600, '', 'https://www.commbank.com.au/personal/credit-cards/awards/gold.html', 'Gold Awards.png', NULL);
 INSERT INTO `card_info` VALUES(19, 'Altitude', 6, 19.99, 21.49, NULL, 45, 100.00, NULL, NULL, NULL, NULL, NULL, 1000, NULL, NULL, 'proprietary', '\0', '\0', '\0', '', NULL, 0.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 18200, '', 'http://www.westpac.com.au/personal-banking/credit-cards/reward/altitude/?from=leftnav', 'Altitude.png', NULL);
-INSERT INTO `card_info` VALUES(20, 'Awards', 3, 20.24, 21.24, NULL, 55, 89.00, NULL, 15.00, NULL, NULL, NULL, 500, NULL, NULL, 'proprietary', '\0', '\0', '\0', '', NULL, 0.00, NULL, NULL, NULL, NULL, NULL, 2.50, NULL, NULL, 18600, '', 'https://www.commbank.com.au/personal/credit-cards/awards/awards.html', 'Awards.jpg', NULL);
+INSERT INTO `card_info` VALUES(20, 'Awards', 3, 20.24, 21.24, NULL, 55, 89.00, NULL, 15.00, NULL, NULL, NULL, 500, NULL, NULL, 'proprietary', '\0', '\0', '\0', '', NULL, 0.00, NULL, NULL, NULL, NULL, NULL, 2.50, NULL, NULL, 18600, '', 'https://www.commbank.com.au/personal/credit-cards/awards/awards.html', 'Awards.png', NULL);
 INSERT INTO `card_info` VALUES(21, 'Platinum Edge Credit Card', 1, 20.74, NULL, NULL, 55, 195.00, NULL, NULL, 30.00, 15.00, NULL, 3000, 50000, 2.50, 'Proprietary', '', '', '', '\0', 0.99, 1.00, 6, 10000, 195.00, NULL, 1.00, 1.00, NULL, 6900, 13500, '', 'http://www.americanexpress.com/australia/campaigns/platinumedge/index.shtml', 'Platinum Edge Credit Card.jpg', NULL);
-INSERT INTO `card_info` VALUES(22, 'Platinum Awards QFF', 3, 20.24, 21.24, NULL, 55, 280.00, 10.00, 15.00, NULL, NULL, NULL, 6000, NULL, NULL, 'QFF', '', '', '', '', NULL, 0.00, NULL, NULL, NULL, NULL, 2.00, NULL, NULL, 8000, 15100, '', 'https://www.commbank.com.au/personal/credit-cards/awards/platinum.html', 'Platinum Awards QFF.jpg', NULL);
+INSERT INTO `card_info` VALUES(22, 'Platinum Awards QFF', 3, 20.24, 21.24, NULL, 55, 280.00, 10.00, 15.00, NULL, NULL, NULL, 6000, NULL, NULL, 'QFF', '', '', '', '', NULL, 0.00, NULL, NULL, NULL, NULL, 2.00, NULL, NULL, 8000, 15100, '', 'https://www.commbank.com.au/personal/credit-cards/awards/platinum.html', 'Platinum Awards QFF.png', NULL);
 INSERT INTO `card_info` VALUES(23, 'Velocity Escape Card', 1, 20.74, NULL, NULL, 44, NULL, NULL, NULL, 30.00, NULL, NULL, 2000, 40000, 0.03, 'Velocity', '', '', '', '\0', 0.99, 1.00, 6, 7500, NULL, NULL, NULL, 1.00, NULL, 6900, 13500, '', 'http://www.americanexpress.com/australia/velocity-rewards-escapecard', 'Velocity Escape Card.jpg', NULL);
 INSERT INTO `card_info` VALUES(24, 'Qantas American Express Discovery Card', 1, 20.74, NULL, NULL, 44, NULL, NULL, NULL, 30.00, 30.00, NULL, 1000, 35000, 0.03, 'QFF', '', '', '', '\0', 0.99, 1.00, 6, 7500, NULL, NULL, 1.00, 1.00, NULL, 8000, 15100, '', 'http://www.americanexpress.com/australia/campaigns/discoverypalms/index.html', 'Qantas American Express Discovery Card.jpg', NULL);
 INSERT INTO `card_info` VALUES(25, 'Velocity Gold', 1, 20.74, NULL, NULL, 44, 199.00, NULL, NULL, 6.00, 15.00, NULL, 3000, 40000, 0.03, 'Velocity', '', '', '', '\0', 0.99, 1.00, 6, 15000, 99.00, NULL, NULL, 1.00, NULL, 6900, 13500, '', 'http://www.americanexpress.com/australia/velocity-rewards-goldcard', 'Velocity Gold.jpg', NULL);
 INSERT INTO `card_info` VALUES(26, 'Qantas American Express Premium Card', 1, 20.74, NULL, NULL, 44, 249.00, NULL, NULL, 30.00, 30.00, NULL, 1000, 40000, 3.00, 'QFF', '', '', '', '\0', 0.99, 1.00, 6, 30000, 149.00, NULL, 1.00, 1.00, NULL, 8000, 15100, '', 'http://www.americanexpress.com/australia/campaigns/qantaspremiumrtp/index.html', 'Qantas American Express Premium Card.jpg', NULL);
 INSERT INTO `card_info` VALUES(27, 'Gold Awards QFF', 3, 20.24, 21.24, NULL, 55, 144.00, 10.00, 15.00, NULL, NULL, NULL, 4000, NULL, NULL, 'QFF', '\0', '\0', '\0', '', NULL, 0.00, NULL, NULL, NULL, NULL, 2.50, NULL, NULL, 8000, 15100, '', 'https://www.commbank.com.au/personal/credit-cards/awards/gold.html', 'Gold Awards QFF.png', NULL);
-INSERT INTO `card_info` VALUES(28, 'Awards QFF', 3, 20.24, 21.24, NULL, 55, 89.00, 10.00, 15.00, NULL, NULL, NULL, 500, NULL, NULL, 'QFF', '\0', '\0', '\0', '', NULL, 0.00, NULL, NULL, NULL, NULL, 2.50, NULL, NULL, 8000, 15100, '', 'https://www.commbank.com.au/personal/credit-cards/awards/awards.html', 'Awards QFF.png', NULL);
+INSERT INTO `card_info` VALUES(28, 'Awards QFF', 3, 20.24, 21.24, NULL, 55, 89.00, 10.00, 15.00, NULL, NULL, NULL, 500, NULL, NULL, 'QFF', '\0', '\0', '\0', '', NULL, 0.00, NULL, NULL, NULL, NULL, 2.50, NULL, NULL, 8000, 15100, '', 'https://www.commbank.com.au/personal/credit-cards/awards/awards.html', 'Award QFF.png', NULL);
 INSERT INTO `card_info` VALUES(29, 'flyBuys Rewards', 5, 19.99, 21.74, NULL, 44, 65.00, NULL, NULL, NULL, NULL, NULL, 6000, NULL, NULL, NULL, '\0', '\0', '\0', '\0', NULL, 0.00, NULL, 10000, NULL, '2019-10-14', NULL, NULL, NULL, NULL, 20000, '', 'http://www.nab.com.au/personal/credit-cards/nab-flybuys-rewards-card', 'flyBuys Rewards.jpg', NULL);
 INSERT INTO `card_info` VALUES(30, 'Velocity Platinum', 1, 20.74, NULL, NULL, 44, 349.00, NULL, NULL, 30.00, 15.00, NULL, 3000, 65000, 2.50, 'Velocity', '', '', '', '\0', 0.99, 1.00, 6, 50000, 349.00, NULL, NULL, 1.00, NULL, 6900, 13500, '', 'http://www.americanexpress.com/australia/velocity-rewards-platinumcard', 'Velocity Platinum.jpg', NULL);
 INSERT INTO `card_info` VALUES(31, 'Qantas American Express Ultimate Card', 1, 20.74, NULL, NULL, 44, 450.00, NULL, NULL, 30.00, 30.00, NULL, 3000, 65000, 2.50, 'QFF', '', '', '', '\0', 0.99, 1.00, 6, 50000, 250.00, NULL, 1.00, 1.00, NULL, 8000, 15100, '', 'http://www.americanexpress.com/australia/campaigns/qantasultimatertp/index.html', 'Qantas American Express Ultimate Card.jpg', NULL);
 INSERT INTO `card_info` VALUES(32, 'Platinum Reserve Credit Card', 1, 20.74, NULL, NULL, 55, 395.00, NULL, NULL, 30.00, 15.00, NULL, 3000, 65000, 2.50, 'Proprietary', '', '', '', '\0', 99.00, 1.00, 6, 30000, 395.00, NULL, 1.00, 1.00, NULL, 6900, 13500, '', 'https://www.americanexpress.com/au/content/platinum-reserve-credit-card', 'Platinum Reserve Credit Card.jpg', NULL);
 INSERT INTO `card_info` VALUES(33, 'Platinum', 1, NULL, NULL, NULL, NULL, 1200.00, NULL, NULL, 6.00, 15.00, NULL, NULL, 100000, 1.00, 'Proprietary', '', '', '', '\0', NULL, 0.00, NULL, 80000, 1200.00, NULL, 1.00, 1.00, NULL, 6900, 13500, '', 'https://www.americanexpress.com/au/content/the-platinum-card/', 'Platinum.jpg', NULL);
-INSERT INTO `card_info` VALUES(34, 'Balance Visa', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '\0', '\0', '\0', '\0', NULL, 0.00, 16, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 'http://www.anz.com.au/personal/credit-cards/rewards-frequent-flyer/balance-visa/', 'Balance Visa.png', NULL);
+INSERT INTO `card_info` VALUES(34, 'Balance Visa', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '\0', '\0', '\0', '\0', NULL, 0.00, 16, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 'http://www.anz.com.au/personal/credit-cards/rewards-frequent-flyer/balance-visa/', 'Balance Visa.jpg', NULL);
 INSERT INTO `card_info` VALUES(35, 'Velocity Rewards Premium', 5, 19.99, 21.74, NULL, 44, 250.00, NULL, NULL, NULL, NULL, NULL, 6000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 'Velocity Rewards Premium.jpg', NULL);
 INSERT INTO `card_info` VALUES(36, 'Velocity Rewards', 5, 19.99, 21.74, NULL, 44, 65.00, NULL, NULL, NULL, NULL, NULL, 500, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 'Velocity Rewards.jpg', NULL);
-INSERT INTO `card_info` VALUES(37, 'No Annual Fee Mastercard', 4, 17.99, 17.99, NULL, 62, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '\0', '\0', '\0', '\0', NULL, 0.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 'No Annual Fee Mastercard.jpg', NULL);
+INSERT INTO `card_info` VALUES(37, 'No Annual Fee Mastercard', 4, 17.99, 17.99, NULL, 62, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '\0', '\0', '\0', '\0', NULL, 0.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 'No Annual Fee Mastercard.png', NULL);
 INSERT INTO `card_info` VALUES(38, 'Rewards Mastercard', 4, 19.99, 19.99, NULL, 62, 49.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '\0', '\0', '\0', '\0', NULL, 0.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 'Rewards Mastercard.png', NULL);
 INSERT INTO `card_info` VALUES(39, 'American Express', 1, NULL, NULL, NULL, NULL, 80.00, NULL, -1.00, NULL, NULL, NULL, NULL, 35000, 1.00, NULL, '', '', '', '\0', NULL, 0.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 'https://www.americanexpress.com/au/content/the-american-express-card', 'American Express.jpg', NULL);
 INSERT INTO `card_info` VALUES(40, 'David Jones Membership Rewards', 1, 20.74, NULL, NULL, 44, 99.00, NULL, 29.00, 30.00, 15.00, NULL, 2000, 40000, NULL, 'Proprietary - QFF', '', '', '', '\0', NULL, 0.00, NULL, 30000, 99.00, NULL, 0.75, NULL, NULL, NULL, NULL, '', 'https://www.americanexpress.com/australia/campaigns/david-jones/gold-30k', 'David Jones Membership Rewards.jpg', NULL);
-INSERT INTO `card_info` VALUES(41, 'David Jones Platinum Card', 1, 20.74, NULL, NULL, 44, 295.00, NULL, NULL, 30.00, NULL, NULL, 2000, 65000, NULL, 'Proprietary - QFF', '', '', '', '\0', NULL, 0.00, NULL, 40000, 295.00, NULL, 0.75, NULL, NULL, NULL, NULL, '', 'https://www.americanexpress.com/australia/campaigns/david-jones/platinum-40k', 'David Jones Platinum Card.jpg', NULL);
-INSERT INTO `card_info` VALUES(42, 'Low Rate', 1, 11.99, NULL, NULL, 55, 65.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '\0', '\0', '\0', '\0', 0.99, 1.00, 6, NULL, 65.00, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 'Low Rate.jpg', NULL);
+INSERT INTO `card_info` VALUES(41, 'David Jones Platinum Card', 1, 20.74, NULL, NULL, 44, 295.00, NULL, NULL, 30.00, NULL, NULL, 2000, 65000, NULL, 'Proprietary - QFF', '', '', '', '\0', NULL, 0.00, NULL, 40000, 295.00, NULL, 0.75, NULL, NULL, NULL, NULL, '', 'https://www.americanexpress.com/australia/campaigns/david-jones/platinum-40k', 'David Jones Platinum Card.png', NULL);
+INSERT INTO `card_info` VALUES(42, 'Low Rate', 1, 11.99, NULL, NULL, 55, 65.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '\0', '\0', '\0', '\0', 0.99, 1.00, 6, NULL, 65.00, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 'Low Rate.png', NULL);
 
 -- --------------------------------------------------------
 
