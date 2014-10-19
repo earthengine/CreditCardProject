@@ -29,17 +29,27 @@ function getCard(){
 }
 
 function getRecommendedCards(){
-       $.ajax({
-               url:'card_recommendation.php',
-               data:{},
-               type:'post',
-               dataType:'html',
-               success:function(cards){
-            $("#card-recommend-list").empty();
+	$.ajax({
+		url:'card_recommendation.php',
+		data:"wallet=" + JSON.stringify(wallet.toServer()),
+		type:'post',
+		dataType:'html',
+		success:function(cards){
+			$("#card-recommend-list").empty();
 			$("#card-recommend-list").append(cards);
-               }
-       });
-	$("card_recommendation")
+		}
+	});
+}
+
+function getCardBank(id, cont){
+    $.ajax({
+    	url: 'get_card_bank.php',
+    	data: 'id=' + id,
+    	type:'get',
+    	success:function(cardbank){
+    	    cont(cardbank);
+    	}
+    });
 }
 
 function getCardImageById(card, cont){
@@ -85,12 +95,29 @@ function addNewCard(){
 		name:$( "#card option:selected" ).text(),
 		ams:$( "#ams" ).val(),
 		bpem:$( "#bpem" ).val(),
-		pir:$( "#pir" ).val(),
 		psa:$( "#psa" ).val()
-    }
-	wallet.addCard(card);
+    };
+    wallet.addCard(card);
+    getRecommendedCards();
     getCardElement(card, function(elem){
 		$("#wallet").append(elem);
+    });
+}
+
+function addServerWalletCard(serverCard){
+    getCardBank(card.id, function(cb){
+	var card = {
+	    bank: cb.bank,
+	    id: serverCard.id,
+	    name: cb.name,
+	    ams: serverCard.monthly_spend,
+	    bpem: serverCard.balance_percent,
+	    psa: serverCard.amex_percent
+	};
+	wallet.addCard(card);
+	getCardElement(card, function(elem){
+	    $("#wallet").append(elem);
+        });
     });
 }
 
@@ -102,6 +129,7 @@ function deleteCard(event){
     var obj = $(event.target).parent();
     var ord = obj.index();
 	wallet.deleteCard(obj.data("card"));
+	getRecommendedCards();
 	obj.remove();
 }
 
@@ -112,7 +140,6 @@ function editCard(event){
     $( "#card" ).val(card.id);
     $( "#ams" ).val(card.ams);
     $( "#bpem" ).val(card.bpem);
-    $( "#pir" ).val(card.pir);
     $( "#psa" ).val(card.psa);
 
     $( "#add-card" ).dialog( "option", "title", "Edit Card" );
@@ -143,10 +170,10 @@ function dlgEditOK(card, element){
 		name:$( "#card option:selected" ).text(),
 		ams:$( "#ams" ).val(),
 		bpem:$( "#bpem" ).val(),
-		pir:$( "#pir" ).val(),
 		psa:$( "#psa" ).val()
     }
 	wallet.addCard(editedCard);
+	getRecommendedCards();
     updateCardElement(element, editedCard);
 	dlgClose();
 }
@@ -159,7 +186,14 @@ function dlgAddOK(){
 }
 
 function dlgClose(){
+	getRecommendedCards();
 	$( "#add-card" ).dialog( "close" );
+}
+
+function addServerCardsToWallet(cards) {
+	for(var i=0;i<cards.length;++i){
+		addServerWalletCard(cards[i]);
+	}
 }
 
 $(document).ready(function(){
@@ -169,6 +203,9 @@ $(document).ready(function(){
 	modal: true,
 	buttons: getButtons(dlgAddOK, dlgClose)
   });
+  
+  if(typeof(serverWallet)!=="undefined")
+	addServerCardsToWallet(serverWallet.cards);
 
   getRecommendedCards();
   
@@ -183,5 +220,6 @@ $(document).ready(function(){
   $(window).resize(function() {
     $("#add-card").dialog("option", "position", {my: "center", at: "center", of: window});
   });
+  
+  
 });
-

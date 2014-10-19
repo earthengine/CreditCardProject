@@ -36,6 +36,16 @@ include 'include/func.php';
 <script type="text/javascript" src="js/jquery-ui.js"></script>
 <script type="text/javascript" src="js/card.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+
+
+<?php
+	if(isset($_SESSION["wallet"])){
+
+		echo "serverWallet = " . json_encode($_SESSION["wallet"]) . ";";
+	}
+?>
+</script>
 </head>
 
 <body>

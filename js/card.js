@@ -36,8 +36,11 @@ function Wallet(){
 			cards.splice(idx,1);
 			uicards.splice(idx,1);
 		},
-		toJson : function(){
-			return JSON.stringify(cards);
+		toServer : function(){
+			return {"cards":cards};
+		},
+		fromServer : function(json_obj){
+			cards = json_obj.cards;
 		}
 	}
 }
